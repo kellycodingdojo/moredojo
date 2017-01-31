@@ -1,0 +1,221 @@
+* {
+	padding: 0px;
+	margin: 0px;
+	/*outline: 1px dotted red;*/
+}
+
+
+#container{
+	margin: 0 auto;
+	width: 900px;
+	height: 900px;	
+	
+}
+
+#top{
+	background-color: white;
+	width: 900px;
+	height: 75px;
+	display: inline-block;
+	background: white; /* For browsers that do not support gradients */
+  	background: -webkit-linear-gradient( #daedff, white); /* For Safari 5.1 to 6.0 */
+  	background: -o-linear-gradient( #daedff, white); /* For Opera 11.1 to 12.0 */
+  	background: -moz-linear-gradient( #daedff, white); /* For Firefox 3.6 to 15 */
+  	background: linear-gradient( #daedff, white);
+}
+
+#top img{
+	width: 150px;
+	height: 75px;
+	display: inline-block;
+	vertical-align: top;
+
+}
+
+#top h2{
+	width: 325px;
+	height: 35px;
+	display: inline-block;
+	margin-left: 421px;
+	font-size: 18px;
+	padding: 40px 0px 0px 0px;
+}
+
+#menu{
+	display: inline-block;
+	margin: 0px 0px 0px 4px;
+
+}
+
+#menu h3{
+	width: 121px;
+	height: 27px;
+	font-size: 14px;
+	border: 1px solid black;
+	margin: 0px 0px 0px -4px;
+	padding-top: 13px;
+	background-color: white;
+	text-align: center;
+	color: blue;
+	text-decoration: underline;
+	display: inline-block;
+}
+
+#menu h4{
+	
+	width: 27px;
+	height: 40px;
+	margin: 0px 0px 0px -4px;
+	background-color: white;
+	display: inline-block;
+	vertical-align: top;
+	background-color: white;
+	border: 1px solid black;
+}
+
+#main_body_holder{
+	width: 870px;
+	height:705px;
+	padding:15px;
+	background: radial-gradient( lightgrey, #29392C);
+
+}
+
+#main_body_holder img{
+	width: 480px;
+	height:260px;
+	border: 10px solid grey;
+}
+
+#main_body_holder h2{
+	width: 350px;
+	height:260px;
+	background-color: white;
+	display: inline-block;
+	vertical-align: top;
+	margin-left: 16px;
+	
+} 
+
+
+#main_body_holder .greybox h3{
+	margin-top: 18px;
+	font-size: 14px;
+	
+} 
+
+#main_body_holder h4{
+	
+	margin: 18px 0px 0px 0px;
+	font-size: 12px;
+} 
+
+#main_body_holder h5{
+	
+	height: 35px;
+	width: 100px;
+	background-color: blue;
+	margin: 10px 0px 0px 210px;
+	border-radius: 10px;
+	text-align: center;
+	padding-top: 5px;
+	}
+
+#main_body_holder h6{	
+	margin-left: 760px;
+	color: blue;	
+}
+
+
+
+#main_body_bottom{
+	margin: 0px;
+	width: 900px;
+}
+
+.greybox{
+	width: 330px;
+	height: 20px;
+	background: linear-gradient( lightgrey, #55775C, lightgrey);
+	padding: 10px;
+	font-size: 16px;
+	display: inline-block;
+}
+
+#main_body_bottom{
+	margin: 5px 0px 0px 0px;
+	width: 900px;
+	display: inline-block;
+}
+
+
+#main_body_bottom .box1{
+	width: 200px;
+	height: 400px;
+	margin: 0px 20px 0px 0px;
+	background-color: white;
+	display: inline-block;
+	vertical-align: top;
+}
+
+#main_body_bottom  p{
+	width: 180px;
+	height: 30px;
+	background-color: grey;
+	padding: 10px;
+
+}
+
+
+
+#main_body_bottom  img{
+	width: 200px;
+	height: 140px;
+	border: none;
+}
+
+
+#main_body_bottom  h1{
+	width: 180px;
+	height: 140px;
+	font-size: 14px;
+	padding: 10px;
+	vertical-align: top;
+	 background: grey; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(#9fabc5, white); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#9fabc5, white); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#9fabc5, white); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#9fabc5, white); 
+	
+
+}
+
+#main_body_bottom  button{
+	width: 80px;
+	height: 30px;
+	font-size: 10px;
+	padding: 10px;
+	margin-left: 100px;
+	border:3px solid black;
+	border-radius: 10px;
+	color:white;
+	text-decoration: none;
+	background-color: darkblue;
+}
+
+#main_body_bottom a:link {
+    text-decoration: none;
+    color:white;
+}
+
+#main_body_bottom a:visited {
+    text-decoration: none;
+}
+
+#main_body_bottom a:hover {
+    text-decoration: none;
+}
+
+#main_body_bottom a:active {
+    text-decoration: none;
+}

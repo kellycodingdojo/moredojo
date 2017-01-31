@@ -1,0 +1,353 @@
+* {
+	padding: 0px;
+	margin: 0px;
+	outline: 1px dotted red;
+}
+
+
+#container{
+	margin: 0 auto;
+	width: 900px;
+	height: 900px;	
+	
+}
+
+#top{
+	
+}
+
+#top img{
+	height: 70px;	
+	width: 70px;
+
+	
+}
+
+#top h1{
+	display: inline-block;
+	vertical-align: top;
+	margin: 20px 0px 0px 0px;
+	font-family:"Helvetica Neue", Arial, sans-serif;
+    font-weight:100;
+
+}
+
+#top h1 span{
+	color: blue;
+	margin: 0px 0px 0px -8px;
+	}
+
+#top_bar h1{
+	padding: 10px;
+	color: white;
+	font-size: 24px;
+	margin:-17px 0px 0px 0px;
+	font-family:"Helvetica Neue", Arial, sans-serif;
+	font-weight:100;
+	background: blue; /* For browsers that do not support gradients */
+  	background: -webkit-linear-gradient(#1468a8, #7B68EE,#1468a8); /* For Safari 5.1 to 6.0 */
+  	background: -o-linear-gradient(#1468a8, #7B68EE,#1468a8); /* For Opera 11.1 to 12.0 */
+  	background: -moz-linear-gradient(#1468a8, #7B68EE,#1468a8); /* For Firefox 3.6 to 15 */
+  	background: linear-gradient(#1468a8, #7B68EE,#1468a8);
+}
+
+#main_body_holder{
+	width: 900px;
+	height: 700px;
+	background: white; /* For browsers that do not support gradients */
+  	background: -webkit-linear-gradient(#daedff,white); /* For Safari 5.1 to 6.0 */
+  	background: -o-linear-gradient(#daedff,white); /* For Opera 11.1 to 12.0 */
+  	background: -moz-linear-gradient(#daedff,white); /* For Firefox 3.6 to 15 */
+  	background: linear-gradient(#daedff,white);
+}
+
+#left_sidebar{
+	width: 200px;
+	height:505px;
+	margin-bottom: 15px;
+	display: inline-block;
+}
+
+#left_sidebar h6{
+	padding-top: 10px;
+	margin-bottom: 15px;
+	font-size: 16px;
+
+}
+
+#left_sidebar  h6 span{
+	color: red;
+}
+
+#left_sidebar h5{
+	margin-bottom: 15px;
+}
+
+
+#left_sidebar h5 span{
+	color: blue;
+}
+
+#left_sidebar h4{
+	width: 190px;
+	height: 25px;
+	color: white;
+	background-color: blue;
+	padding: 5px;
+	margin-bottom: 10px;
+	text-align: center;
+	border-radius: 7px;
+	font-family:"Helvetica Neue", Arial, sans-serif;
+	font-weight:100;
+	background: blue; /* For browsers that do not support gradients */
+  	background: -webkit-linear-gradient(lightblue,darkblue); /* For Safari 5.1 to 6.0 */
+  	background: -o-linear-gradient(lightblue,darkblue); /* For Opera 11.1 to 12.0 */
+  	background: -moz-linear-gradient(lightblue,darkblue); /* For Firefox 3.6 to 15 */
+  	background: linear-gradient(lightblue,darkblue);
+
+}
+
+#left_sidebar h3{
+	width: 190px;
+	height: 25px;
+	color: white;
+	background-color: blue;
+	padding: 5px;
+	text-align: center;
+	border-radius: 7px;
+	font-family:"Helvetica Neue", Arial, sans-serif;
+	font-weight:100;
+	background: blue; /* For browsers that do not support gradients */
+  	background: -webkit-linear-gradient(white,orange); /* For Safari 5.1 to 6.0 */
+  	background: -o-linear-gradient(white,orange); /* For Opera 11.1 to 12.0 */
+  	background: -moz-linear-gradient(white,orange); /* For Firefox 3.6 to 15 */
+  	background: linear-gradient(white,orange);
+
+}
+
+#left_sidebar h2 {
+	width: 200px;
+	height: 3px;
+	margin: 20px 0px 20px 0px;
+	background-color: lightgrey;
+	position: absolute;
+}
+
+#left_sidebar img {
+	
+	width: 200px;
+	height: 290px;
+	display: inline-block;
+
+	}
+
+#left_sidebar h1{
+	font-size: 20px;
+	color: white;
+	position: relative;
+	top:50px;
+	width: 200px;
+	text-align: center;
+}
+
+#left_sidebar .img2 {
+	width: 100px;
+	height: 150px;
+	margin: 0px 0px 0px 45px;
+	position: relative;
+	bottom:230px;
+
+	}
+
+#left_sidebar button{
+	width: 100px;
+	height: 20px;
+	color: white;
+	position: relative;
+	bottom: 210px;
+	margin: 0px 0px 0px 45px;
+	border-radius: 5px;
+	border-color: #50b1ed;
+	background-color: #50b1ed;
+}
+
+
+#body_content{
+	display: inline-block;
+	vertical-align: top;
+	width: 500px;
+	margin: 0px 0px 0px 15px;
+	
+}
+
+#body_content img{
+	width: 15px;
+	height: 15px;
+	margin-top: 5px;
+	display: inline-block;
+	vertical-align: top;
+
+}
+#body_content h1{
+	display: inline-block;
+	margin-top: 5px;
+	font-size: 12px;
+	color: blue;
+	vertical-align: top;
+}
+
+
+#body_content  .img2{
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	margin: 20px 0px 0px 475px;
+	vertical-align: top;
+	position: absolute;
+}
+
+#body_content  h2{
+	display: inline-block;
+	font-size: 10px;
+	position: relative;
+	left:510px;
+}
+
+#body_content  h3{
+	display: block;
+	font-size: 22px;
+	position: relative;
+	left:555px;
+	color: lightblue;
+}
+
+#body_content  h4{
+	display: inline-block;
+	font-size: 8px;
+	position: relative;
+	left:560px;
+	bottom: 5px;
+
+}
+
+#content_middle{
+	display: inline-block;
+	margin:0px 0px 0px 0px;
+} 
+
+#content_middle h5{
+	position: relative;
+	bottom :685px;
+	left :210px;
+	display: inline-block;
+	width: 680px;
+	height: 3px;
+	margin: 70px 0px 20px 0px;
+	background-color: lightgrey;
+	vertical-align: top;
+}
+
+#content_middle h2{
+	display: block;
+	margin-top: 5px;
+	color: blue;
+	vertical-align: top;
+	position: relative;
+	bottom :685px;
+	left :220px;
+}
+
+#content_middle h3{
+	display: block;
+	position: relative;
+	bottom :685px;
+	left :220px;
+	font-size: 14px;
+	padding: 5px;
+}
+
+#content_middle ul{
+	position: relative;
+	bottom :685px;
+	left :220px;
+	margin-left: 20px;
+	width: 650px;
+
+}
+
+#content_middle  ul li{
+	margin-bottom: 10px;
+}
+
+#content_middle img{
+  width: 400px;
+  height: 150px;
+  margin-left: 100px;
+  	position: relative;
+	bottom :685px;
+	left :220px;
+}
+
+#content_middle ol{
+	position: relative;
+	bottom :685px;
+	left :220px;
+}
+
+#content_middle ol li{
+	width: 670px;
+	margin-bottom: 10px;
+	margin-left: 10px;
+}
+
+#footer {
+	width: 700px;
+	height: 200px;
+	border:3px solid blue;
+	position: relative;
+	bottom: 100px;
+	margin-left: 200px;
+}
+
+#footer img{
+	width: 85px;
+	height: 75px;
+	display: inline-block;
+}
+
+#footer h4{
+	display: inline-block;
+	vertical-align: top;
+	margin: 10px 0px 0px 10px;
+	color: blue;
+}
+
+#footer h5{
+	display: inline-block;
+	position: relative;
+	bottom: 45px;
+	left: 90px;
+	width: 600px;
+}
+
+}
+ a:link {
+    text-decoration: none;
+    color:white;
+}
+
+ a:visited {
+    text-decoration: none;
+}
+
+ a:hover {
+    text-decoration: none;
+}
+
+ a:active {
+    text-decoration: none;
+}
+
+span {
+	color: blue;
+}

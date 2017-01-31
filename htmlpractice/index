@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Coding Dojo html page</title>
+</head>
+<body>
+
+<h1> Hello Coding Dojo</h1>
+<p>table work</p>
+<table style="width:500px, border:solid 1px #666;">  </table>
+<tr>
+	<td>  test</td>
+	<td>  test2</td>
+  </tr>
+  <br>
+<tr>
+	<td>  stuff</td>
+	<td> stuff2</td>
+  </tr>
+  <br><br>
+  
+  <form>
+  <label for="first_name"> First Name: </label>
+  <input type="text" id ="first_name" name="first_name">
+  <br><br>
+  
+  <label for="last_name"> Last Name: </label>
+  <input type="text" id ="last_name" name="last_name">
+  <br><br>
+  <label for="email"> Email Address: </label>
+  <input type="text" id="email" name="email">
+  <br><br>
+  
+  <label for="password">Password:</password>
+  <input type="password" id="password" name="password">
+  <br><br>
+  
+   <label for="c_password"> Confirm Password:</password>
+  <input type="password" for="c_password" name="password">
+  <br><br>
+  
+  <label for="birthday"> Your Birthday:</label>
+  <input type ="date" id="birthday" name="birthday">
+  <br><br>
+  
+  <label for="male"> Male</label>
+  <input type="radio" id="male" name="gender" value="male">
+  
+  <label for="female"> Female</label>
+  <input type="radio" id="female" name="gender" value="female">
+  
+  <label for="alien"> Alien</label>
+  <input type="radio" id="alien" name="alien" value="alien">
+  <br><br>
+  
+  <p> A short description about yourself</p>
+  <textarea name="description"> Description goes here</textarea>
+  <br><br>
+  
+  <select name="language">
+	<option value="html">Html</option>
+	<option value="Javascript">Javascript</option>
+	<option value="C++">C++</option>
+	<option value="CSS">CSS</option>
+	<option value="Basic">Basic</option>
+  </select>
+   <br><br>
+   
+  <input type="submit" value="submit">
+  
+  
+  </form>
+  
+  
+    <p>A great quote by Arthur C. Clarke states that <span id="quote"> any 
+  sufficiently advanced technology is indistinguishable from magic.</span></p>
+  
+  
+  
+  
+  
+  
+  
+  
+</body>
+</html>
