@@ -1,0 +1,13 @@
+print str[2:9]
+print str[41:48]
+print mystr.replace("monkey","alligator",2)
+print min(x)
+print max(x)
+ print x[0], x[-1]
+newlist = [x[0],x[-1]]
+
+x.sort()
+newlist = x[0],x[1]
+>>> x.pop(0)
+>>> x.pop(0)
+x.insert(0,newlist)

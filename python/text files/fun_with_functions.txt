@@ -1,0 +1,16 @@
+fun with functions (1)
+def od_even(a,b):
+    for num in range(a,b):
+        if num % 2 == 0:
+            print("Num is", num, "This is an even num" )
+        else:
+            print ("Num is", num, "This is an odd num" )
+
+od_even(1,2000);
+
+
+(2) mult by 5
+b = [x * 5 for x in a]
+print b
+
+

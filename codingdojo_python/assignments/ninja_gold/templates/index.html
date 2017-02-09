@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <meta charset="utf-8">
+
+<title>flask counter</title>
+</head>
+<body>
+<div id="container">
+{{session['gold']}} 
+    <div class="top">
+
+	
+
+	<form action="/process_money" method="POST">
+  		Farm<br><input type="hidden" name="building" value="farm" />
+ 		(Earns 10 - 20 golds)<br> <input type="submit" value="Find Gold!"/>
+	</form> 
+
+	<form action="/process_money" method="POST">
+	  Cave<br><input type="hidden" name="building" value="cave" />
+	 (Earns 5 - 10 golds)<br> <input type="submit" value="Find Gold!"/>
+	</form> 
+
+	<form action="/process_money" method="POST">
+	  House<br><input type="hidden" name="building" value="house" />
+	 (Earns 2 - 5 golds)<br> <input type="submit" value="Find Gold!"/>
+	</form> 
+
+	<form action="/process_money" method="POST">
+	 Casino<br><input type="hidden" name="building" value="casino" />
+	(Earns 0 - 50 golds)<br>  <input type="submit" value="Find Gold!"/>
+	</form> 
+	</div>
+
+	<div class="bottom">
+	{%   for count in session['activities']  %}
+		<p> {{count}} </p>
+	{%  endfor  %}
+	</div>
+	
+	<form action="/reset" method="POST">
+	 <br><input type="hidden" name="reset" value="nomore"/>
+	<br>  <input type="submit" value="reset gold"/>
+	</form> 
+
+	<form action="/form_reset" method="POST">
+	 <br><input type="hidden" name="form_reset" value="non"/>
+	<br>  <input type="submit" value="reset output"/>
+	</form> 
+
+
+</div>			
+</body>
+</html>

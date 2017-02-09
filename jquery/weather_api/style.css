@@ -1,0 +1,16 @@
+* {
+	padding: 0px;
+	margin: 0px;
+	outline: 1px dotted red;*/
+}
+
+
+#container{
+	padding: 50px;
+	margin: 0px auto;
+	display: inline-block;
+	height: 1100px;
+	width: 900px;
+	display: inline-block;
+
+}

@@ -1,0 +1,18 @@
+import random
+random_num = random.randint(0,100)
+
+def grades():
+    if random_num < 60:
+        print "fail"
+    elif random_num > 60 and random_num < 70:
+        print("Score: ", random_num, "; Your grade is D")
+    elif random_num > 70 and random_num < 80:
+        print("Score: ", random_num, "; Your grade is C")
+    elif random_num > 80 and random_num < 90:
+        print("Score: ", random_num, "; Your grade is B")
+    elif random_num > 90 and random_num <= 100:
+        print("Score: ", random_num, "; Your grade is A")
+    print("End")
+print grades()
+
+

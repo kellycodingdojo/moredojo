@@ -1,0 +1,22 @@
+* {
+	
+	outline: 1px dotted red;
+}
+
+#container{
+	margin: 100px;
+	display: inline-block;
+}
+
+.top{
+	display: inline-block;
+}
+
+form{
+	display: inline-block;
+	height: 150px;
+	width: 150px;
+	background-color: lightblue;
+	text-align: center;
+	vertical-align: top;
+}

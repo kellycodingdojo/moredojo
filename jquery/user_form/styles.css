@@ -1,0 +1,62 @@
+* {
+	padding: 0px;
+	margin: 0px;
+	outline: 1px dotted red;*/
+}
+
+
+#container{
+	padding: 50px;
+	margin: 0px auto;
+	display: inline-block;
+	height: 1100px;
+}
+
+form{
+	width: 350px;
+	height: 500px;
+	display: inline-block;
+	
+}
+
+label{
+	width: 500px;
+	
+	
+}
+
+#left{
+	width: 700px;
+	height: 600px;
+	
+	}
+	
+#right{
+	width: 200px;
+	display: inline-block;
+	vertical-align: top;
+}
+
+#first{
+	width: 300px;
+	display: block;
+	
+}
+
+#last{
+	width: 300px;
+	display: block;
+	
+}
+
+#mail{
+	width: 300px;
+	display: block;
+	
+}
+
+#phone{
+	width: 300px;
+	display: block;
+	
+}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>flask counter</title>
+</head>
+<body>
+
+
+<h1> Counter </h1>
+{{session['counter']}} Times
+
+<br><br>
+<form action='/counter' method='post'>
+	<input type='submit' value='clear'>
+</form>
+
+<br>
+<form action='/two' method='post'>
+	<input type='submit' value='two'>
+</form>
+<br>
+<br>
+<form action='/double' method='post'>
+	<input type='submit' value='double'>
+</form>
+
+
+</body>
+</html>

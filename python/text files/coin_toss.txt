@@ -1,0 +1,15 @@
+
+heads = 0
+tails = 0
+
+for count in range(0,5000):
+    random_num = round(random.random())
+    x = random_num
+    if x == 0:
+        heads += 1
+        print "Attempt # {} Throw coin....It's heads!....Got  {} heads so far and {} tails so far!".format(count,heads,tails)
+    else:
+        tails += 1
+        print "Attempt # {} Throw coin....It's Tails!....Got {} heads so far and {} tails so far!".format(count,heads,tails)
+
+print x

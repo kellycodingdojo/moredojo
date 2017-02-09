@@ -1,0 +1,66 @@
+* {
+	padding: 0px;
+	margin: 0px;
+	outline: 1px dotted red;*/
+}
+
+
+#container{
+	padding: 50px;
+	margin: 0px auto;
+	display: inline-block;
+	height: 1100px;
+	width: 900px;
+	display: inline-block;
+
+}
+
+#form_one{
+	display: inline-block;
+	width: 400px;
+}
+
+form{
+	width: 500px;
+	display: inline-block;
+}
+
+textarea{
+	width: 250px;
+	height: 100px;
+}
+
+p{
+	width: 250px;
+	
+}
+
+#card{
+	width: 400px;
+	display: inline-block;
+	vertical-align: top;
+	margin-left: 50px;
+	
+}
+#card_one{
+	width: 200px;
+	height: 100px;
+	display: inline-block;
+	
+}
+
+#card_two{
+	width: 200px;
+	height: 100px;
+	
+}
+#card_three{
+	width: 200px;
+	height: 100px;
+	
+}
+
+h4{
+
+}
+

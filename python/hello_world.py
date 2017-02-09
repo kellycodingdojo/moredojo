@@ -1,0 +1,6 @@
+print "hello world"
+
+x = "hello Python"
+print x
+y = 42 
+print y 

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>User Form</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function(){
+		
+
+function attach_divhand(){
+  $('h4').click(function(){
+      $(this).hide();
+      $(this).siblings('h2').hide();
+      $(this).siblings('.pdesc').show();
+  $('p').click(function(){
+      $(this).hide();
+      $(this).siblings('h2').show();
+      $(this).siblings('h4').show();
+  })
+})
+}
+$(document).ready(function(){
+
+  $('#card').submit(function(){
+    $('#container').append('<div id="contact"><h2>' + $('.firstname').val() + " " + $('.lastname').val() + '</h2><h4>Click here for description</h4>' + '<p class="pdesc">' + $('.desc').val() + '</p></div>');
+    $('.pdesc').hide();
+    $('.firstname').val("");
+    $('.lastname').val('');
+    $('.desc').val("");
+    attach_divhand();
+    return false;
+  })
+
+})
+});
+</script>
+
+
+
+  <body>
+    <div id="container">
+      <form id="card" action="index.html" method="post">
+        <p>First Name:<input class="firstname" type="text" value=""></p>
+        <p>Last Name:<input class="lastname" type="text" value=""></p>
+        <p>Description:</p>
+        <p><textarea class="desc" name="name" rows="8" cols="80" value=""></textarea></p>
+        <p><input type="submit" name="" value="Add User"></p>
+      </form>
+    </div>
+  </body>
+</html>

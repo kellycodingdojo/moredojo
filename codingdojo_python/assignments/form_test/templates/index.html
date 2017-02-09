@@ -1,0 +1,29 @@
+<html>
+    <head>
+       <title>Form Test Index</title>
+    </head>
+    <body>
+      <h1>Index Page</h1>
+      <h3>Create a User</h3>
+      <!-- read on to learn about form actions, we'll talk about the method in a later section -->
+      <form action='/users' method='post'>
+          Your Name: <input type='text' name='name'>
+          <br><br>
+          Email: <input type='text' name='email'>
+          <br><br>
+            Location<select name="location">
+            <option value="flint">Flint</option>
+            <option value="la">Los Angeles</option>
+            <option value="davison">Davison</option>
+          </select>
+          <br><br>
+          Favorite Language<select name="language">
+            <option value="Html">Html</option>
+            <option value="css">CSS</option>
+            <option value="python">Python</option>
+          </select>
+          <br><br>
+          <input type='submit' value='createuser'>
+      </form>
+    </body>
+</html>

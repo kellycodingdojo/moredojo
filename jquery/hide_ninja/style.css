@@ -1,0 +1,34 @@
+* {
+	padding: 0px;
+	margin: 0px;
+	outline: 1px dotted red;*/
+}
+
+
+#container{
+	margin: 0px auto;
+	width: 900px;
+	height: 900px;
+
+
+}
+
+#row_one{
+
+}
+
+.ninja{
+	width: 200px;
+	height: 200px;
+}
+
+#row_two{
+
+}
+
+#my_button{
+	margin-left: 360px;
+	text-align: center;
+	height: 50px;
+}
+

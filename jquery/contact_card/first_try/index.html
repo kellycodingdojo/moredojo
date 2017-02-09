@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>User Form</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function(){
+		
+		$("#form_one").submit(function(){
+			$(".data_first").append($("#first_name").val() );
+			// turn these in to varibles and concat it all. 
+			$(".data_last").append($("#last_name").val());
+			$(".click_for").append(document.createTextNode( "Click For Description" )
+			
+				);
+			return false;
+		})
+		$("#card_one").click(function(event){
+			$(this).children().toggle();
+			
+			$(this).append($("textarea").val());
+			event.preventDefult;
+		});
+
+
+
+
+	});
+	</script>
+</head>
+
+<body>
+	<div id="container">
+	<form id="form_one">
+		  <label for="first_name"> First Name: </label>
+  		<input type="text" id="first_name" name="firstme" placeholder="First Last"><br><br>
+
+  		  <label for="last_name"> Last Name: </label>
+  		<input type="text" id ="last_name" name="lastme" placeholder="Enter Last"><br><br>
+  		<p> Description</p>
+  		<textarea id="textarea" name="description" placeholder="Enter Description"> </textarea>
+  		<br><br>
+
+  		<input id="send_button" type="submit" value="Add User">
+	</form>
+
+	<div id="card">
+		
+
+		<div id="card_one">
+			<ul>
+				<li class="data_first"></li>
+				<br>
+				<li class="data_last"></li>
+				<br>
+				<li class="click_for"></li>	
+			</ul>
+		</div>
+
+
+
+	</div>
+	</div>
+</body>	

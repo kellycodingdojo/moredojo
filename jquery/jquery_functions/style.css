@@ -1,0 +1,33 @@
+* {
+	padding: 0px;
+	margin: 0px;
+	/*outline: 1px dotted red;*/
+}
+
+
+#container{
+	margin: 0 auto;
+	width: 900px;
+	height: 900px;	
+	
+}
+
+#funny{
+	display: none;
+}
+
+#end_slider {
+	display: none;
+}
+
+#end_slide_toggle{
+	display: none;
+}
+
+#the_deal{
+	display: none;
+}
+
+.turn_blue{
+	color:blue;
+}

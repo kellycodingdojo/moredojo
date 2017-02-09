@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Hide Ninja</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src= 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+
+			$(".ninja").click(function(event){
+				var temp = $(this).attr("cat");
+				// console.log(temp);
+				// console.log("temp");
+				var real = $(this).attr("src");
+				$(this).attr("src",temp);
+				$(this).attr("cat",real);
+			
+
+			})
+		})
+	</script>
+</head>
+<body>
+	<div id="container">
+		
+			<img class="ninja" src="images/ninja0.png" alt=" logo" cat="images/cat0.png">
+
+			
+
+			<img class="ninja" src="images/ninja1.png" alt=" logo" cat="images/cat1.png">
+		
+
+			<img class="ninja" src="images/ninja2.png" alt=" logo" cat="images/cat2.png">
+			
+
+			<img class="ninja" src="images/ninja3.png" alt=" logo" cat="images/cat3.png">
+			
+
+			<img class="ninja" src="images/ninja4.png" alt=" logo" cat="images/cat4.png">
+			
+		</div>
+	</div>
+</body>	

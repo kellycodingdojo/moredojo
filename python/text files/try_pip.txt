@@ -1,0 +1,8 @@
+installed Django
+pip list shows a lsit of tools
+requirment already satified. 
+this is the same as list but with pip required formatting. 
+it creates a text file on the desktop with the pip freeze output
+got rid of Django
+nothing happens
+outputs the Flask files 

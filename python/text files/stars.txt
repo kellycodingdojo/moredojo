@@ -1,0 +1,14 @@
+x = [4, "ehllo", 1, 3, 5, 7, 25]
+
+def star(arr):
+    for index in range(len(arr)):
+        if type(x[index]) == str:
+            first = x[index]
+            first = first[0].lower()
+            for index in range(len(x[index])):
+                print first,
+        else:
+                for index in range(x[index]):
+                    print '*',
+        print ''
+star(x)

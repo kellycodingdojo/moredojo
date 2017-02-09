@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery Functions</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src= 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+
+		$("#button_click").click(function(event){
+		$("#button_click").css("background-color","green")
+		});
+
+		$( "#hide_me" ).click(function() {
+		$( "#hide_me" ).hide( "slow", function() {
+		 	// Animation complete
+		});
+		});
+				
+		$( "#show_me" ).click(function() {
+		$( "#show_me" ).show( "slow", function() {
+		 	// Animation complete
+		});
+		});
+
+		$( "#show_me" ).click(function() {
+		$( "#funny" ).toggle( "slow", function() {
+		    // Animation complete.
+		});
+		});
+
+		$( "#slide_down" ).click(function() {
+	    $( "#end_slider" ).slideDown( "slow", function() {
+	    // Animation complete.
+	  	});
+		});
+
+		$( "#slide_up" ).click(function() {
+		$( "#end_slide_up" ).slideUp( "slow", function() {
+		    // Animation complete.
+		});
+		});
+
+		$( "#slide_toggle" ).click(function() {
+		$( "#end_slide_toggle" ).slideToggle( "slow", function() {
+		    // Animation complete.
+		});
+		});
+
+		$( "#fade_in" ).click(function() {
+  		$( "#the_deal" ).fadeIn( "slow", function() {
+    	// Animation complete
+  		});
+		});
+		
+		$( "#fade_out" ).click(function() {
+		$( "#fade_this" ).fadeOut( "slow", function() {
+		    // Animation complete.
+		});
+		});
+
+		$( "turn_blue" ).addClass( "turn_blue" );
+
+		$( "#before" ).before( "<b>I've used .before to add text before an id= </b>" );
+
+		$( "#before" ).after( "<b>I've used .after to add text before an id= </b>" );
+
+		$( "#append" ).append(document.createTextNode( "this is has been appened to the end of fo this id" ));
+
+		$( ".add_image" ).html( '<img id="add_image" src="images/ninja.png">');
+
+		
+
+		$('#add_image').width(200).height(200);	
+
+		$( "#another_image" ).attr( "alt", '<img id="altninja" src="images/ninja2.png">' );	
+
+		});
+
+
+	</script>
+</head>
+<body>
+	<div id="container">
+		<h1 id="top_title"> jQuery 
+		<br><br>
+		<button id="button_click" type="button" alt="top"('Hello world!')">Click to turn green.</button>
+		</h1>
+		<br><br>
+		<h3 id="hide_me"> click to Hide me please </h3>
+		<br><br>
+		<p id="show_me">click to Show an element</p>
+		<img id="funny" src="images/funny.jpg" alt=" logo">
+		<hr>
+		<h1 id="slide_down"> Click to slide down </h1>
+		<div  id="end_slider"> 
+		<br>
+		  <ul>
+		  <li>fd </li>
+		  <li>fd </li>
+		  <li>fd </li>
+		  </ul>
+		</div>
+		<br><br>
+		<p id="end_slide_up">
+		so this will slide upawrds when the pork button is clicked. 
+		</p>
+		<br><br>
+		<button id="slide_up" type="button" alt="middle" ">Eat Pork!!</button>
+		<br><br>
+		<button id="slide_toggle" type="button" alt="middle" ">Toggle me baby</button>
+		<br><br>
+		<p id="end_slide_toggle">
+		You have toggled me good. 
+		</p>
+		<br><br>
+
+		<button id="fade_in" type="button" alt="middle" >
+		Click me
+		</button>
+		<br><br>
+		<p id="the_deal"> Pow *Slow Fade Muther Trucker!</p>
+		<br>
+
+
+		<hr>
+		
+		<br><br>
+		<button id="fade_out" type="button" alt="bottom" ">Click to fade out...man</button>
+		<br><br>
+		<h2 id="fade_this"> Groovy </h2>
+		<br><br>
+		<p id="end_slider">
+		Call your mother every sunday
+		</p>
+		<hr>
+		<h2 class="turn_blue"> I've been turned blue with jquery class modifier</h2>
+		<br><br>
+		<h2 id="before"> working with .before and .after </h2>
+		<br><br>
+		<h2 id="append"> Doing a Append here..</h2>
+		<br><br>
+		<hr>
+		<button class="add_image">
+		click to add image to html. 
+		</button>
+		<br><br>
+		<p id="another_image" alt="altninja"> difjdg</p>
+	</div>
+</body>	

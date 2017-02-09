@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>TESTING</title>
+	<style type="text/css">
+		fieldset{
+			width:600px;
+			height:200px;
+		}
+	</style>
+</head>
+<body>
+	<h2>Hello {{ session['user'] }}</h2>
+	<div>
+			<!-- If we have error messages in the session, they are not automatically reset -->
+			<!-- If we use flash messages, then they will be cleared on the next request -->
+			<h4>Flash Validation errors:</h4>
+			<!-- This code iterates through the list returned from the get_flashed_messages function and prints each item -->
+			{% with messages = get_flashed_messages() %} 
+				<!-- Note that we need to declare the ends of code blocks instead of using indentation -->
+				{% if messages %}
+					{% for message in messages %}
+						<p>{{message}}</p>
+					{% endfor %}
+				{% endif %}	
+			{% endwith %}
+		</div>
+	<fieldset>
+		<h3>Enter your info (don't submit anything less than two characters long):</h3>
+		<form action="/comments" method="post">
+			Your Comment: <input type="text" name="content">
+			<!-- Hidden inputs can be used to identify which form sent a request to a route, if you have multiple forms sending to the same route -->
+			<input type="hidden" name="form_name" value="correct_form">
+			<input type="submit" name="">
+		</form>
+	</fieldset>
+	<fieldset>
+		<h3>Don't submit this form.</h3>
+		<form action="/comments" method="post">
+			Your Comment: <input type="text" name="content">
+			<!-- Note the different value for the hidden input below -->
+			<input type="hidden" name="form_name" value="wrong_form">
+			<input type="submit" name="">
+		</form>
+	</fieldset>
+</body>
+</html>

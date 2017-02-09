@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Hoving Coats</title>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function(){
+
+
+		//works!!
+		// $("img").hover(function(){
+		// 	var temp = $(this).attr("other");
+		// 	$(this).attr("other",$(this).attr("src"));
+		// 	$(this).attr("src",temp);
+		// 	});
+		
+
+		//works!!
+		$("img").hover(function(){
+				var temp = $(this).attr("other");
+				var real = $(this).attr("src");
+
+				$(this).attr("src",temp);
+				$(this).attr("other",real);
+
+
+			
+		
+		});
+	});
+	//works!!
+// // $(".box").on({
+// //  "mouseover" : function() {
+// //     this.src = 'images/coat.jpg';
+// //   },
+// //   "mouseout" : function() {
+// //     this.src='images/coat2.jpg';
+// //   }
+// });
+
+// 	});
+
+	</script>
+
+
+</head>
+<body>
+<div id="contanier">
+	<h1>
+	<img class="box" main="images/coat.jpg" src="images/coat.jpg" other="images/coat2.jpg">
+	<img class="box" src="images/coat.jpg" other="images/coat2.jpg">
+	<img class="box" src="images/coat.jpg" other="images/coat2.jpg">
+	<img class="box" src="images/coat.jpg" other="images/coat2.jpg">
+	</h1>
+
+
+</div>
+
+
+	
+</body>	

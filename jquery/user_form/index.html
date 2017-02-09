@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>User Form</title>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function(){
+
+		 $("form").submit(function(){
+
+		 	var fn = $("#first_name").val(); // this is the same as below. 
+		 	$( "#first" ).append(fn +" ")
+
+		 	$( "#last" ).append($("#last_name").val()+" "); // this is the same as above.
+		 	$( "#mail" ).append($( "#email").val()+" ");
+		 	$( "#phone" ).append($( "#contact").val()+" ");
+			return false; 
+		 });
+
+		
+
+	});
+	</script>
+</head>
+
+<body>
+	<div id="container">
+		<div id="left">
+		Add User<br><br>
+		<hr>
+		<form>
+		  <label for="first_name"> First Name: </label>
+  		<input type="text" id="first_name" name="firstme" placeholder="First Last"><br><br>
+
+  		  <label for="last_name"> Last Name: </label>
+  		<input type="text" id ="last_name" name="lastme" placeholder="Enter Last"><br><br>
+
+  		  <label for="email"> Email: </label>
+  		<input type="text" id ="email" name="email1" placeholder="Enter Email"><br><br>
+
+  		  <label for="contact"> Contact Number: </label>
+  		<input type="text" id ="contact" name="contact1" placeholder="Your Phone#"><br><br>
+		 <input type="submit" value="submit">
+	  	</form>
+		  	<div id="right">
+			<h3 id="first">First Name: </h3> 
+			<h3 id="last">Last Name: </h3>
+			<h3 id="mail">Email: </h3>
+			<h3 id="phone">Contact #: </h3>
+			
+		</div>
+		
+	</div>
+	
+</body>	

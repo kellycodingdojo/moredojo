@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Hoving Coats</title>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function(){
+
+		var target = "http://pokeapi.co/api/v1/pokemon/"+ $(this).attr("class");
+
+		$("pokemon").click(function(event){
+		$.get(target,function(res){
+			var name = res.name;
+			console.log(name);
+			$('#pokedex').html("<h2>" + name + "</h2>");
+		}, "json");
+		})
+
+
+
+		
+
+
+
+
+		for(var i = 1; i <= 28; i++){
+         // console.log('<img class="' + i + '" src="http://pokeapi.co/media/img/' + i + '.png">');
+          $('#pokemon').append('<class="' + i + '"><img src="http://pokeapi.co/media/img/' + i + '.png">');
+        }
+
+
+
+
+
+
+
+
+	});
+	</script>
+</head>
+
+
+	<body>
+	<div id="contanier">
+		<div id="pokemon">
+			<div class="name">
+
+			</div>
+		</div>
+	</div>
+	
+	</body>
+
+

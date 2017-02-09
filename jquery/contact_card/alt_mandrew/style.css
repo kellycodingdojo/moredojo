@@ -1,0 +1,17 @@
+* #container{
+  width:960px;
+}
+#contact{
+  width:300px;
+  height:150px;
+  border:1px solid black;
+  display:inline-block;
+  vertical-align:top;
+  margin:10px;
+}
+#contact h2{
+  text-align:center;
+}
+#contact h4{
+  text-align:center;
+}

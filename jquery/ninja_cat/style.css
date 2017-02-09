@@ -1,0 +1,45 @@
+* {
+	padding: 0px;
+	margin: 0px;
+	outline: 1px dotted red;*/
+}
+
+#container{
+	margin: 0px auto;
+	width: 900px;
+	height: 900px;
+
+}
+
+.ninja{
+	display: block;
+	margin: 3px;
+}
+
+.cat_one{
+	display: block;
+	display: none;
+}
+
+.cat_two{
+	display: block;
+	display: none;
+
+}
+
+.cat_three{
+	display: block;
+	display: none;
+
+}
+.cat_four{
+	display: block;
+	display: none;
+
+}
+
+.cat_five{
+	display: block;
+	display: none;
+
+}

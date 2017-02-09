@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Hide Ninja</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src= 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+
+		$(".ninja").click(function(event){
+		$(this).hide("slow");
+		});
+
+		$("#my_button").click(function(event){
+		$(".ninja").show("slow");
+		});
+
+		});
+</script>
+</head>
+<body>
+	<div id="container">
+		<div id="row_one">
+		<img class="ninja" src="ninja.jpg" alt=" logo">
+		<img class="ninja" src="ninja.jpg" alt=" logo">
+		<img class="ninja" src="ninja.jpg" alt=" logo">
+		<img class="ninja" src="ninja.jpg" alt=" logo">
+		</div>
+		<div class="row_two">
+		<img class="ninja" src="ninja.jpg" alt=" logo">
+		<img class="ninja" src="ninja.jpg" alt=" logo">	
+		<img class="ninja" src="ninja.jpg" alt=" logo">
+		<img class="ninja" src="ninja.jpg" alt=" logo">
+		</div>
+		<button id="my_button">
+			Click To Reset
+		</button>
+	</div>
+</body>
+

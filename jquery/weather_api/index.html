@@ -1,0 +1,38 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+    <title>weather API</title>
+    <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+    <script type='text/javascript'>
+      $(document).ready(function() {
+    	$('#weather_form').submit(function() {
+    	var location = $('#input').val();
+    	console.log(location);
+    	var apiKey = '7899a0417185e73e9b77efa67abd6bb1'
+        var urlString ="http://api.openweathermap.org/data/2.5/weather?q="+location+"&appid="+ apiKey;
+       
+        
+        $.get(urlString, function(res) {
+            var kelvin = res.main.temp;
+            var calc = kelvin - 273;
+            var far = calc * 9/5 + 32;
+            $('#results').html('In your location, the temperature in Fahrenheit is:'+ far);
+        }, 'json');
+        
+        return false;
+    });
+});
+
+    </script>
+  </head>
+  <body>
+    	<div id='container'>
+    	<form id="weather_form">
+    	<p>Location<input id="input" type="text" value=""></p>
+    	<p><input type="submit" name="" value="Look up Temp"></p>
+    	</form>
+    	<div id ="results">
+    	</div>
+   		</div>
+   </body> 

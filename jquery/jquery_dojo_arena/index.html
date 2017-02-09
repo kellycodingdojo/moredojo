@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery Functions</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src= 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("#button_one").hover(function(){
+			$("#background").attr("src","images/beach.jpg")
+				});
+
+			$("#button_one").click(function(){
+			$("#button_div").html(function(){
+
+			});
+			$("#background").attr("src","images/dojo.jpg")
+				});
+					
+
+			$("#button_two").hover(function(){
+			$("#background").attr("src","images/earth.jpg")
+				});
+			$("#button_three").hover(function(){
+			$("#background").attr("src","images/dojo.jpg")
+				});
+			$("#button_four").hover(function(){
+			$("#background").attr("src","images/forest.jpg")
+			});
+
+			$("#button_five").hover(function(){
+			$("#background").attr("src","images/matrix.jpg")
+			});
+
+			$("#button_six").hover(function(){
+			$("#background").attr("src","images/snow.jpg")
+
+			});
+
+		});
+</script>
+</head>
+<body>
+
+
+	<div id="container">
+	
+	<img id="background" src="images/wireframe1.png" alt=" logo">
+		<h1 id="button_div">
+			<h2 id="button_one">
+			beach
+			</h2>
+			<h2 id="button_two">
+			planet
+			</h2>
+			<h2 id="button_three">
+			dojo
+			</h2>
+			<h2 id="button_four">
+			forest
+			</h2>
+			<h2 id="button_five">
+			matrix
+			</h2>
+			<h2 id="button_six">
+			snow
+			</h2>
+		</h1>
+		<div id="select_player">
+		 <button onclick="myFunction()" class="dropbtn">Dropdown</button>
+  			<div id="myDropdown" class="dropdown-content">
+			    <a href="#">Link 1</a>
+			    <a href="#">Link 2</a>
+			    <a href="#">Link 3</a>
+  			</div>
+
+	</div>
+</body>		
+		

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>User Form</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function(){
+		
+		var firsty = $("#first_name").val();
+		var lasty = $("#last_name").val();
+		var talky = $("#textarea").val();
+		console.log(talky);
+
+		$('#card_one').on('submit',function(){
+			$('.data_first').append(firsty).val();
+			$('.data_last').append(lasty).val();
+			$('.click_for').append(talky).val();
+		});
+
+
+
+	});
+	</script>
+</head>
+
+<body>
+	<div id="container">
+	<h1> Contact Card</h1>
+	<br>
+	<form id="form_one">
+		  <label for="first_name"> First Name: </label>
+  		<input type="text" id="first_name" name="firstme" placeholder="First Last"><br><br>
+
+  		  <label for="last_name"> Last Name: </label>
+  		<input type="text" id ="last_name" name="lastme" placeholder="Enter Last"><br><br>
+  		<p> Description</p>
+  		<textarea id="textarea" name="description" placeholder="Enter Description"> </textarea>
+  		<br><br>
+
+  		<input id="send_button" type="submit" value="Add User">
+	</form>
+
+	<div id="card">
+		
+
+		<div id="card_one">
+			
+				<div class="data_first"></div>
+				<br>
+				<div class="data_last"></div>
+				<br>
+				<div class="click_for"></div>	
+			
+		</div>
+
+
+
+	</div>
+	</div>
+</body>	
