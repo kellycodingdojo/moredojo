@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+ {% load staticfiles  %}
+      <link rel="stylesheet" href="{% static 'styles.css' %}" media="screen" title="no title"  charset="utf-8">
+	<title>Email Val Success Django</title>
+
+</head>
+<body>
+
+{% if messages %}
+<p class='user'> The Email that you submitted 
+		{% for stuff in messages %}
+		{{stuff}} is valid.. Thank you. 
+		{% endfor %}</p>
+{% endif %}
+
+<h1> Emails in Database. </h1>
+
+	<p>{% for stuff in email %}</p>
+				{{stuff.email}}   :   {{stuff.created_at}} 
+			<p> {% endfor %}</p>
+
+<!-- 		{% if messages %}
+	<p>{% for stuff in messages %}</p>
+				{{stuff}} 
+			<p> {% endfor %}</p>
+			{% endif %} -->
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+{% load staticfiles %}
+	<title>Disappering Ninjas in dJango</title>
+</head>
+<body>
+
+
+
+{% if key == null %}
+	<p>No Ninjas Here</p>
+{% endif %}
+
+{% if key == None %} <!-- if you want to only show up on the index page you would need tpo build another html page for just that. --> 
+{% load static %}
+	<img src="{% static "images/all.jpg" %}" alt="My image"/>
+{% endif %}
+
+{% if key == 'red' %}
+	{% load static %} 
+	 <img src="{% static "images/raphael.jpg" %}" alt="My image"/>
+{% endif %}
+
+{% if key == 'blue' %}
+<img src="{% static "images/leonardo.jpg" %}" alt="My image"/>
+{% endif %}
+
+{% if key == 'orange' %}
+<img src="{% static "images/donatello.jpg" %}" alt="My image"/>
+{% endif %}
+
+{% if key == 'purple' %}
+<img src="{% static "images/michelangelo.jpg" %}" alt="My image"/>
+{% endif %}
+
+{% if key != null and key != 'red' and key != 'blue' and key != 'orange' and key != 'purple' %}
+{% load static %}
+	<img src="{% static "images/notapril.jpg" %}" alt="My image"/>
+{% endif %}
+
+
+</body>
+</html>

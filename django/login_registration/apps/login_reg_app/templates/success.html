@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Success page</title>
+</head>
+<body>
+
+
+
+<p>Success! Welcome, {{request.session.name}}
+{% if messages %}
+		<p>{% for stuff in messages %}</p>
+				{{stuff}} <br>
+			<br>
+			{% endfor %}
+			{% endif %}
+			
+		</p>
+	
+<p>{% for stuff in everyone %}</p>
+				{{stuff.first}} <br>
+			<br>
+			{{stuff.email}}
+			{% endfor %}
+
+</body>
+</html>

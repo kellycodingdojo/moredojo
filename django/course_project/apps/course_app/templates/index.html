@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Course App in django</title>
+</head>
+<body>
+
+<p>Add a new course</p>
+<form action='/add_course' method='POST'>
+	Course Name:<input type="text" name="name"><br><br>
+	<p>Description: <br><textarea rows="4" cols="50" name="comment">Enter comment Dude!</textarea></p>
+	{% csrf_token %}	
+	<input type="submit" value="ADD">
+</form>
+
+		
+			<p>{% for stuff in the_goods %}</p>
+				{{stuff.name}}  {{stuff.comment}}  {{stuff.created_at}} <a href='delete/{{stuff.id}}'> remove</a>
+			<p> {% endfor %}</p>
+		
+</body>
+</html>

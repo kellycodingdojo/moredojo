@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+ {% load staticfiles  %}
+      <link rel="stylesheet" href="{% static 'css/styles.css' %}" media="screen" title="no title"  charset="utf-8">
+  
+
+</head>
+<body>
+<div id="all">
+	<p> The Current Time and Date</p>
+	<div class="line"><span class="text"><span>{{somekey}}</span></span></div>
+
+ <form action="/new_user" method="post">
+  {% csrf_token %}
+  <input type="text" name="first_name">
+  <input type="submit" value="submit">
+ </form>
+ 
+ {{request.session.name}}
+
+</div>
+</body>
+</html>

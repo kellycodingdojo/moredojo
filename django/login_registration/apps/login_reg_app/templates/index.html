@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<h1>Registration</h1>
+ 	<form action='/register' method='POST'>
+    Email:<input type="text" name="email">
+    <br><br>
+    First:<input type="text" name="first">
+    <br><br>
+    Last:<input type="text" name="last">
+    <br><br>
+    Password:<input type="text" name="password">
+    <br><br>
+    Confimr:<input type="text" name="confirm">
+    <br><br>
+    <input type="submit" value="Register">
+    {% csrf_token %}
+   </form>
+   {% if messages %}
+	<p>{% for stuff in messages %}</p>
+				{{stuff}} 
+			<p> {% endfor %}</p>
+			{% endif %}	
+
+
+    <h1>Login</h1>
+		<form action='/login' method='POST'>
+		Email:<input type="text" name="email"><br><br>
+		Password:<input type="text" name="password">
+		<input type="submit" value="Login">
+		{% csrf_token %}
+		</form>	
+
+		
+
+
+
+
+</body>
+</html>

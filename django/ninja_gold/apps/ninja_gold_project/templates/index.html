@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="utf-8">
+ {% load staticfiles  %}
+      <link rel="stylesheet" href="{% static 'css/styles.css' %}" media="screen" title="no title"  charset="utf-8">
+	<title>Ninja Gold in Python</title>
+</head>
+<body>
+
+{{request.session.gold}} 
+
+	<form action="/process_money" method="post">
+	{% csrf_token %}
+	    Farm<input type="hidden" name="building" value="farm" />
+	   (Earns 10 -20 Gold)<input type="submit" value="Find Gold!"/>
+  	</form>
+
+  	<form action="/process_money" method="post">
+  	{% csrf_token %}
+	    Cave<input type="hidden" name="building" value="cave" />
+	   (Earns 5 - 10 Gold)<input type="submit" value="Find Gold!"/>
+  	</form>
+
+  	<form action="/process_money" method="post">
+  	{% csrf_token %}
+	    House<input type="hidden" name="building" value="house" />
+	   (Earns 2 - 5 Gold)<input type="submit" value="Find Gold!"/>
+  	</form>
+
+  	<form action="/process_money" method="post">
+  	{% csrf_token %}
+	    Casino<input type="hidden" name="building" value="casino" />
+	   (Earn/loss 0 - 50 Gold)<input type="submit" value="Gamble!"/>
+  	</form>
+
+  	<textarea rows="15" cols="150">
+  		{%   for count in request.session.activities  %}
+  		{{count}}
+  		{%  endfor  %}
+
+  	</textarea>
+
+<form action="/reset" method="POST">
+{% csrf_token %}
+	 <br><input type="hidden" name="reset" value="nomore"/>
+	<br>  <input type="submit" value="reset gold"/>
+	</form> 
+
+	<form action="/form_reset" method="POST">
+	{% csrf_token %}
+	 <br><input type="hidden" name="form_reset" value="non"/>
+	<br>  <input type="submit" value="reset output"/>
+	</form> 
+
+</body>
+</html>

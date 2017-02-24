@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>confirmation page</title>
+
+
+</head>
+<body>
+<form action='/no' method='POST'>
+	<input type="submit" value="NO">
+	{% csrf_token %}
+</form>
+
+<form action='/yes/{{which.id}}' method='POST'>
+	<input type="submit" value="Yes! I want to delete this">
+	{% csrf_token %}
+</form>
+
+	<p>Are you sure you want to deleete tehe following course.</p>
+	
+			{{which.name}} <br><br> 
+			{{which.comment}}
+
+			
+
+</body>
+</html>

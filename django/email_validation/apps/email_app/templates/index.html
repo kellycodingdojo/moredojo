@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Email Validation with Django</title>
+</head>
+<body>
+<p>Email Verify</p>
+<form action='/email' method='POST'>
+	Verify Email <input type="text" name="email"><br><br>
+	{% csrf_token %}	
+	<input type="submit" value="Submit">
+</form>
+	
+		
+	
+			
+
+
+		{% if messages %}
+	<p>{% for stuff in messages %}</p>
+				{{stuff}} 
+			<p> {% endfor %}</p>
+			{% endif %}
+
+
+
+</body>
+</html>

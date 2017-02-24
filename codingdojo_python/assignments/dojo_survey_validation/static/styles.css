@@ -1,0 +1,30 @@
+#play_area{
+	width: 400px;
+	display: inline-block;
+}
+
+.top{
+	width: 400px;
+}
+
+
+.winning{
+	background-color: green;
+	width: 400px;
+}
+
+.high{
+	background-color: red;
+	width: 400px;
+	display: inline-block;
+}
+
+.low{
+	background-color: blue;
+	width: 400px;
+}
+
+p{
+	width: 400px;
+	display: inline-block;
+}

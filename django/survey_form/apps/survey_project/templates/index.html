@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+	<title>Survey Project</title>
+</head>
+<body>
+<div id="all">
+<form action='/user_input' method='POST'>
+	Your Name?<input type="text" name="first"><br><br>
+	 Dojo Local? <select name="city">
+		 <option value="burbank">Burbank</option>
+		  <option value="oc">OC</option>
+		  <option value="davison">Davison</option>
+	</select><br><br>
+	Fav language? <select name="language">
+		  <option value="js">JavaScript</option>
+		  <option value="python">Python</option>
+		  <option value="html">Html</option>
+		  <option value="css">CSS</option>
+	</select><br><br>
+	Comment (Optional) <br><textarea rows="4" cols="50" name="comment">Enter comment Dude!</textarea>
+	{% csrf_token %}	
+	<p>{{request.session.name}}</p>
+	
+	<input type="submit" value="Submit">
+</form>
+
+
+</div>
+
+
+
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+	<title>Survey Project</title>
+</head>
+
+<body>
+
+Thanks for submitting you have submitted this form<p>{{request.session.num_clicks}} time now.</p>
+{% csrf_token %}
+	Name: <p>{{request.session.name}}</p>
+	Dojo Location: <p>{{request.session.city}}</p>
+	Favorite Lang: <p>{{request.session.language}}</p>
+	Your Comment: <p>{{request.session.comment}}</p>
+</body>
+</html>
