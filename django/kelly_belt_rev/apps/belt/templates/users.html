@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> this displays the specific user</title>
+</head>
+<body>
+<a href="/books">Home: </a>
+	<a href="/">Logout: </a>
+	<a href="/books/add">Add a new book and review: </a>
+	<p>User Alias: {{user.alias}}</p>
+	<p>Name: {{user.first}}</p>
+    <p>Email: {{user.email}}</p>
+    <p>Total reviews: {{total_reviews.count}}</p>
+    <p>Posted these reviews</p>
+    {% for review in user.reviews.all %}
+      <fieldset>
+        <p><a href="/books/{{review.book.id}}">{{review.book.title}}</a></p>
+      </fieldset>
+    {% endfor %}
+  </body>
+</html>
+

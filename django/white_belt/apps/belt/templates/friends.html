@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>This is your friends dashboard</title>
+</head>
+<body>
+<a href="/logout">Logout</a>
+<h1>Hello, {{request.session.theuser}}!</h1>
+
+<h2>Here is the list of your friends:</h2>
+      <table>
+              <tr>
+                <th>Alias</th>
+                <th>Action</th>
+                <th>user Id</th> 
+               
+              </tr>
+              {% for stuff in friend_list %}
+              <tr>
+                <td>{{stuff.alias}}</td>
+                <td><a href="/view/{{friend_list.id}}">Veiw Profile</a>
+                  <a href="/remove/{{friend_list.id}}">Remove Friend</a>
+                </td>
+                <td>{{stuff.id}}</td>
+               
+                <td><a href="products/show/{{stuff.id}}">Show</a></td>
+                <td><a href="products/edit/{{stuff.id}}">Edit</a></td>
+                <td><a href="products/destroy/{{stuff.id}}">delete</a></td>
+              </tr>
+              {% endfor %}
+              </table>
+
+
+
+<br>
+
+
+
+
+<h2>Here is the list of NOT your friends:</h2>
+			<table>
+              <tr>
+                <th>Alias</th>
+                <th>Action</th>
+                <th>user Id</th> 
+               
+              </tr>
+              {% for stuff in user_list %}
+              <tr>
+              	<td>{{stuff.alias}}</td>
+              	<td><a href="/add/{{stuff.id}}">Add Friend</a></td>
+                <td>{{stuff.id}}</td>
+               
+                <!-- <td><a href="products/show/{{stuff.id}}">Show</a></td>
+                <td><a href="products/edit/{{stuff.id}}">Edit</a></td>
+                <td><a href="products/destroy/{{stuff.id}}">delete</a></td> -->
+              </tr>
+              {% endfor %}
+              </table>
+
+
+	
+
+</body>
+</html>

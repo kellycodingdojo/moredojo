@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+    
+    .right{
+    	margin-left: 500px;
+	}
+	th{
+		padding-left: 20px;
+	}
+
+	.add{
+    	margin-left: 500px;
+	}
+
+    </style>
+	<title>This is your trip dashboard</title>
+</head>
+<body>
+
+
+<a class="right" href="/logout">Logout</a>
+<a class="right" href="/display">see info</a>
+
+
+
+<p>Hello: {{request.session.username}}</p>
+			<p>Your Trip Schedules </p>
+			<table>
+              <tr>
+                <th>ID</th>
+                <th>Destination</th>
+                <th>start</th> 
+                <th>end</th>
+                <th>Plan</th> <!---  Plan = description  -->
+                <th>Trip ID</th>
+              </tr>
+              {% for stuff in travel_list %}
+              <tr>
+                <td>{{stuff.user.id}}</td>
+                <td><a href="/travels/destination/{{stuff.id}}">{{stuff.destination}}</a></td>
+
+                <td>...{{stuff.start}}</td>
+                <td>{{stuff.end}}</td> 
+                <td>...{{stuff.description}}</td>
+                <td>{{stuff.id}}</td>
+                <!-- <td><a href="products/show/{{stuff.id}}">Show</a></td>
+                <td><a href="products/edit/{{stuff.id}}">Edit</a></td>
+                <td><a href="products/destroy/{{stuff.id}}">delete</a></td> -->
+              </tr>
+              {% endfor %}
+              {% for stuff in joined %}
+              <tr>
+                <td>{{stuff.user.id}}</td>
+                <td><a href="/travels/destination/{{stuff.id}}">{{stuff.destination}}</a></td>
+
+                <td>...{{stuff.start}}</td>
+                <td>{{stuff.end}}</td> 
+                <td>...{{stuff.description}}</td>
+                <td>{{stuff.id}}</td>
+                <!-- <td><a href="products/show/{{stuff.id}}">Show</a></td>
+                <td><a href="products/edit/{{stuff.id}}">Edit</a></td>
+                <td><a href="products/destroy/{{stuff.id}}">delete</a></td> -->
+              </tr>
+              {% endfor %}
+            </table>
+            <br><br>
+
+            <p>Others Users Trip Schedules </p>
+            <table>
+              <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Destination</th>
+                <th>start</th> 
+                <th>end</th>
+                <th>Join</th>
+                <th>Trip ID</th>
+              </tr>
+              {% for stuff in others_list %}
+              <tr>
+                <td>{{stuff.user.id}}</td>
+                <td>{{stuff.user.name}}</td>
+
+                <td>...{{stuff.description}}</td>
+                <td>{{stuff.start}}</td> 
+                <td>...{{stuff.end}}</td>
+                <td><a href="/join/{{stuff.id}}">{{stuff.destination}}</a></td>
+                <td>{{stuff.id}}</td>
+                <!-- <td><a href="products/show/{{stuff.id}}">Show</a></td>
+                <td><a href="products/edit/{{stuff.id}}">Edit</a></td>
+                <td><a href="products/destroy/{{stuff.id}}">delete</a></td> -->
+              </tr>
+              {% endfor %}
+            </table>
+<br>
+            <a class='add' href="travels/add">Add Travel Plan</a>
+            
+</body>
+</html>

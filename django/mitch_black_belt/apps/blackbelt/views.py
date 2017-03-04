@@ -33,6 +33,7 @@ def login(request):
             return redirect('/travels')
 
 def dash(request):
+    print 2 * 2
     context = {'usertrips':Trip.objects.filter(users__id=request.session['userid']),
     'othertrips':Trip.objects.exclude(users__id=request.session['userid'])}
     return render(request, 'blackbelt/travels.html', context)

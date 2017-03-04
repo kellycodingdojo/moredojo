@@ -1,0 +1,27 @@
+<p> All Users </p>
+			<p><table>
+              <tr>
+                <th>ID</th>
+                <th>NAME</th>
+                <th>ALIAS</th> 
+                <th>EMAIL</th>
+                <th>DATE</th> <!---  Plan = description  -->
+              </tr>
+              {% for stuff in user_list %}
+              <tr>
+              	<td>{{stuff.id}}</td>
+              	<td>{{stuff.name}}</td>
+                <td>{{stuff.alias}}</td>
+                <td>...{{stuff.email}}</td>
+                <td>{{stuff.date}}</td> 
+                
+                <!-- <td><a href="products/show/{{stuff.id}}">Show</a></td>
+                <td><a href="products/edit/{{stuff.id}}">Edit</a></td>
+                <td><a href="products/destroy/{{stuff.id}}">delete</a></td> -->
+              </tr>
+              {% endfor %}
+              </table>
+<br>
+<br>
+<hr>
+	

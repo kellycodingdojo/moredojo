@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title> this is where you add a book and review.</title>
 </head>
 <body>
-<form action='/book_view' method='POST'>
-	Book Title<input type="text" name="title"><br><br>
+<a href="/books">Cancel book add and go back to main books page.</a><br><br>
+<form action='/send_book' method='POST'>
+	Book Title:<input type="text" name="title"><br><br>
 	<h3>Author</h3>
 	 Choose for list: <select name="author">
 		 <option value="phil">Phil</option>
@@ -13,16 +14,23 @@
 		  <option value="bill">Bill</option>
 	</select><br>
 	Or add a new Athor: <input type="text" name="new_author"><br><br>
-	Review <br><textarea rows="4" cols="50" name="comment">Enter comment Dude!</textarea><br>
+	Review <br><textarea rows="4" cols="50" name="review">Enter comment Dude!</textarea><br>
 	Rating <select name="rating">
-		 <option value="one">1</option>
-		  <option value="two">2</option>
-		  <option value="three">3</option>
-		  <option value="four">4</option>
-		  <option value="five">5</option>
+		 <option value="1">1</option>
+		  <option value="2">2</option>
+		  <option value="3">3</option>
+		  <option value="4">4</option>
+		  <option value="5">5</option>
 	</select><br>
 	{% csrf_token %}	
-	<p>{{request.session.name}}</p>
+	<p>Your session name:{{request.session.name}}</p>
 	
+ {% if messages %}
+	<p>{% for stuff in messages %}</p>
+				{{stuff}} 
+			<p> {% endfor %}</p>
+			{% endif %}	
+
+
 	<input type="submit" value="Submit">
 </body>

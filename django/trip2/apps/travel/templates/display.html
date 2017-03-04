@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<style type="text/css">
+    
+    .right{
+    	margin-left: 500px;
+	}
+	td{
+		padding-left: 20px;
+	}
+
+	tr{
+		padding-left: 20px;
+	}
+
+	.add{
+    	margin-left: 500px;
+	}
+
+    </style>
+
+
+	<title> ALL USERS AND TRIPS</title>
+</head>
+<body>
+
+<a class="right" href="/logout">Logout</a>
+<a class="right" href="/travels">back to travels</a>
+
+<p> All Stuff </p>
+			<table>
+              <tr>
+                <th>Destination</th>
+                <th>ForeignKey</th>
+                <th>start</th> 
+                <th>end</th>
+                <th>Plan</th> <!---  Plan = description  -->
+              </tr>
+              {% for stuff in travel_list %}
+              <tr>
+              	<td>{{stuff.id}}</td>
+              	<td>{{stuff.user.id}}</td>
+                <td>{{stuff.destination}}</td>
+                <td>...{{stuff.start}}</td>
+                <td>{{stuff.end}}</td> 
+                <td>...{{stuff.description}}</td>
+                <!-- <td><a href="products/show/{{stuff.id}}">Show</a></td>
+                <td><a href="products/edit/{{stuff.id}}">Edit</a></td>
+                <td><a href="products/destroy/{{stuff.id}}">delete</a></td> -->
+              </tr>
+              {% endfor %}
+<br>
+
+	<p>All Users </p>
+			<table>
+              <tr>
+                <th>id</th>
+                <th>name</th> 
+                <th>username</th>
+                
+              </tr>
+              {% for stuff in user_list %}
+              <tr>
+              	<td>{{stuff.id}}</td>
+                <td>{{stuff.name}}</td>
+                <td>...{{stuff.username}}</td>
+                
+                <!-- <td><a href="products/show/{{stuff.id}}">Show</a></td>
+                <td><a href="products/edit/{{stuff.id}}">Edit</a></td>
+                <td><a href="products/destroy/{{stuff.id}}">delete</a></td> -->
+              </tr>
+              {% endfor %}
+
+
+</body>
+</html>

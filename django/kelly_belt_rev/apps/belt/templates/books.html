@@ -1,11 +1,54 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title> This is the view</title>
 </head>
 <body>
-<p>Welcome, {{request.session.theuser}}</p>
-<p>Recent Book Review</p>
-<a href="/books/add">Add a new book and review</a>
+<style type="text/css">
+    
+    #all{
+	 overflow-y: scroll;
+	    height: 100px;
+	    width: 250px;
+	    resize: none;
+	    margin-left: 400px; 
+	    position: relative;
+    }
+    h1{
+    	display: inline-block;
+    	vertical-align: top;
+    	position: absolute;
+    }
+    .next{
+
+    }
+
+    </style>
+
+		<a href="/">Logout</a>
+
+	<h1>Welcome, {{request.session.theuser}}</h1>
+	<div id='all'>
+		{% for stuff in all_books %}
+		<a href="/books/{{stuff.id}}">{{stuff.title}}</a></p>
+		 </p>
+		{% endfor %}
+	</div>
+	<br>
+	<a class='next' href="/books/add">Add a new book and review:</a>
+	<p>Recent Book Reviews:</p>
+	{% for stuff in top_three %}
+		<p>The Book Title: <a href="/books/{{stuff.book.id}}">{{stuff.book.title}}</a></p>
+		<p>{{stuff.rating}}</p>
+		<p>{{stuff.user.first}}   {{stuff.review}}</p>
+		<p>{{stuff.created_at}}</p>
+		
+		<hr>
+		{% endfor %}
+		
+
+
+
+
 </body>
 </html>

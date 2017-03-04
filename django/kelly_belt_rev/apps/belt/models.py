@@ -53,8 +53,12 @@ class UserManager(models.Manager):
         if error_msgs:
             return {'errors':error_msgs}
         else:
-            hashed = bcrypt.hashpw(postData['pass'].encode(), bcrypt.gensalt())
-            user = User.objects.create(email=postData['email'], first=postData['first'], alias=postData['alias'], password=hashed)
+            hashed = bcrypt.hashpw(postData['password'].encode(), bcrypt.gensalt())
+            user = User.objects.create(
+        	email=postData['email'],
+        	first=postData['first'],
+        	alias=postData['alias'],
+        	password=hashed)
             return {'theuser':user.first, 'alias':user.alias, 'userid':user.id}
 
 	
@@ -70,15 +74,15 @@ class User(models.Model):
 
 
 class BookManager(models.Manager):
-	def add_book(self, postData):
+	def add_book(self, postData, userid):
 		error_msgs = []
 		try:
 			Books.objects.get(title=postData['title'])
 			error_msgs.append("That book already exists.")		
 		except:
 			pass
-		if len(postData['author']) < 2:
-			error_msgs.append("Must enter author name!")
+		if len(postData['title']) < 2:
+			error_msgs.append("Must enter title!")
 			print "2"
 		if len(postData['review']) < 5:
 			error_msgs.append("Must enter review")
@@ -86,9 +90,13 @@ class BookManager(models.Manager):
 		if error_msgs:
 			return {'errors':error_msgs}
 		else:
-			author = Authors.objects.create(name=postData['author'])
+			author = Authors.objects.create(name=postData['new_author'])
 			book = Books.objects.create(title=postData['title'], author=author)
-			Reviews.objects.create(review=postData['review'], rating=postData['rating'], book=Books.objects.get(id=book.id), user=User.objects.get(id=postData['userid']))
+			Reviews.objects.create(
+			review=postData['review'], 
+			rating=int(postData['rating']), 
+			book=Books.objects.get(id=book.id),
+			user=User.objects.get(id=userid))
 			return {'bookid':book.id}
 
 class Authors(models.Model):
@@ -106,10 +114,16 @@ class Books(models.Model):
 
 class ReviewManager(models.Manager):
     def add(self, postData, userid):
-        user = {'user': User.objects.get(id=userid)}
-        book = {'books': Books.objects.get(id=postData['id'])}
-        Reviews.objects.create(review=postData['review'], rating=postData['rating'], book=book['book'], user=user['user'])
+        user = User.objects.get(id=userid)
+        book = Books.objects.get(id=int(postData['id']))
+        Reviews.objects.create(
+	        review=postData['review'],
+	        rating=postData['rating'],
+	        book=book,
+	        user=user)
         return
+
+
 
 class Reviews(models.Model):
     review = models.TextField()

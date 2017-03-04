@@ -1,9 +1,48 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>This is the view of a spec</title>
 </head>
 <body>
-{{book_info.title}}
+
+		<a href="/books">Home</a>
+		<a href="/">Logout</a>
+		<br><br>
+		{{the_book.title}}<br><br>
+
+		Author :{{the_author.name}}<br><br>
+		<br>
+		
+
+		Reviews{% for stuff in the_rating %}
+		<hr>
+		<p> rating  :{{stuff.rating}}</p>
+		   <a href="/users/{{stuff.user.id}}">{{stuff.user.first}}'s Review: {{stuff.review}} </a>
+		   <p><a href="/delete/{{stuff.id}}/{{the_book.id}}">Delete Review</a></p>
+		   <hr>
+		{% endfor %}
+
+		<p>Add a Review</p>
+			{% if messages %}
+				<p>{% for stuff in messages %}</p>
+					{{stuff}} 
+				<p> {% endfor %}</p>
+			{% endif %}	
+		<form action="/add_review" method="post">
+	      {% csrf_token %}
+	      <input type="hidden" name="id" value="{{the_book.id}}">
+	      <textarea name="review" rows="8" cols="80"></textarea>
+	      <p>Rating: <select name="rating">
+	        <option value="1">1</option>
+	        <option value="2">2</option>
+	        <option value="3">3</option>
+	        <option value="4">4</option>
+	        <option value="5">5</option>
+	      </select></p>
+	      <button type="submit" name="button">Submit Review</button>
+      </form>
+
 </body>
 </html>
+
+
