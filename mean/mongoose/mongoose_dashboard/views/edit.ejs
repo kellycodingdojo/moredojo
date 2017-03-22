@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>New</title>
+</head>
+<body>
+	<h1>Edit:</h1>
+	<form action="/hero/<%= heros._id %>" method="POST">
+		Name:<input type="text" name="name" value="<%= heros.name %>">
+		<br>
+		power: <input type="text" name="power" value="<%= heros.power %>">
+		<br>
+		Age: <input type="text" name="power" value="<%= heros.age %>">
+		<br>
+		<input type="submit" value="Update Hero ">
+	</form>
+	<a href="/">Home</a>
+</body>
+</html>

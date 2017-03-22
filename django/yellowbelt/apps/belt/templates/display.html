@@ -16,7 +16,8 @@
               	<td>{{stuff.name}}</td>
                 <td>{{stuff.alias}}</td>
                 <td>...{{stuff.date}}</td>
-                <td>...{{stuff.user.id}}</td>
+
+                
                 
                 <!-- <td><a href="products/show/{{stuff.id}}">Show</a></td>
                 <td><a href="products/edit/{{stuff.id}}">Edit</a></td>
@@ -29,17 +30,22 @@
 	<p>All Quote </p>
 			<table>
               <tr>
-                <th>id</th>
-                <th>name</th> 
+                <th>quote id</th>
                 <th>username</th>
+                <th>author</th> 
+                <th>quote</th>
+                <th>user id</th>
+                
                 
               </tr>
               {% for stuff in quote_list %}
               <tr>
               	<td>{{stuff.id}}</td>
+                <td>{{stuff.user.name}}</td>
                 <td>{{stuff.author}}</td>
-                <td>...{{stuff.review}}</td>
+                <td>...{{stuff.quote}}</td>
                 <td>{{stuff.user.id}}</td>
+
                 
                 <!-- <td><a href="products/show/{{stuff.id}}">Show</a></td>
                 <td><a href="products/edit/{{stuff.id}}">Edit</a></td>
@@ -53,17 +59,21 @@
   <p>All FAvs </p>
                 <table>
               <tr>
-                <th>id</th>
+                <th>fav id</th>
                 <th>name</th> 
-                <th>username</th>
-                
+                <th>quote</th>
+            
+                <th> user id</th>
+               
               </tr>
-              {% for stuff in quote_list %}
+              {% for stuff in fav_list %}
               <tr>
                 <td>{{stuff.id}}</td>
-                <td>{{stuff.author}}</td>
-                <td>...{{stuff.review}}</td>
-                <td>{{stuff.user.id}}</td>
+                <td>{{stuff.fav_user.id}}</td>
+                <td>...{{stuff.fav_quote.id}}</td>
+                <td>{{stuff.fav_user.name}}</td>
+                
+
                 
                 <!-- <td><a href="products/show/{{stuff.id}}">Show</a></td>
                 <td><a href="products/edit/{{stuff.id}}">Edit</a></td>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html ng-app='app'>
+<head>
+	<title>
+		Angular test
+	</title>
+ <script type="text/javascript" src = 'bower_components/angular/angular.js'></script>
+ <script type="text/javascript">
+
+ 	var app = angular.module('app',[])
+ 	console.log(app)
+ 	app.controller('FirstController',function($scope) {
+ 		$scope.all_users = [];
+ 		$scope.addUser = function(){
+ 			$scope.all_users.push($scope.newUser);
+ 				$scope.newUser = {};
+ 				console.log($scope.newUser);
+ 		}
+ 	});
+ </script>
+</head>
+<body>
+		<div ng-controller='FirstController'>
+			<h1 ng-bind='user'></h1>		
+			<form>
+				Name<input type="text" ng-model="newUser.name">
+				Age<input type="text" ng-model="newUser.age">
+				<button ng-click='addUser()'> Add User</button>
+			</form>
+			<table>
+				<tr>
+					<th>Name</th>
+					<th>Age</th>
+				</tr>
+				<tr ng-repeat='user in all_users'>
+					<td ng-bind="user.name"></td>
+					<td>{{user.age}}</td>	
+				</tr>
+			</table>
+		</div>
+		
+		
+
+</body>
+</html>

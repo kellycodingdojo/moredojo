@@ -66,12 +66,6 @@ class User(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     objects = UserManager()
-
-class FriendManager(models.Manager):
-	def add_friend(self, userid):
-		 # newfriend = Friend.objects.create(userid=userid)
-		
-		return #{'friend': newfriend.id}
 		
 
 class Friend(models.Model):
@@ -79,4 +73,4 @@ class Friend(models.Model):
 	updated_at = models.DateTimeField(auto_now=True)
 	users = models.ForeignKey(User, related_name="user")
 	friends = models.ForeignKey(User, related_name="friend", null=True)
-	objects = FriendManager()
+	

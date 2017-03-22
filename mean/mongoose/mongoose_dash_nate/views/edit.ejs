@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>New</title>
+</head>
+<body>
+	<h1>Edit:</h1>
+	<form action="/car/<%= car._id %>" method="POST">
+		Name:<input type="text" name="name" value="<%= car.name %>">
+		<br>
+		Horsepower: <input type="text" name="horsepower" value="<%= car.horsepower %>">
+		<br>
+		<input type="submit" value="Add ">
+	</form>
+	<a href="/">Home</a>
+</body>
+</html>

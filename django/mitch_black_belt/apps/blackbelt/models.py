@@ -63,6 +63,19 @@ class User(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     objects = UserManager()
 
+class Trip(models.Model):
+    destination = models.CharField(max_length=255)
+    start_date = models.DateField()
+    end_date = models.DateField()
+    plan = models.TextField()
+    users = models.ManyToManyField(User, related_name='user_trips')
+    created_by = models.ForeignKey(User, related_name='creator')
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+    objects = TripManager()
+
+
+
 class TripManager(models.Manager):
     def new_trip(self, postData):
         error_msgs = []

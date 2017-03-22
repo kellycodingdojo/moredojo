@@ -102,10 +102,10 @@ def travel_dash(request):
     return render(request, 'travels.html', context)
 
 def joins(request,id): 
-    trip =Trip.objects.get(id=id)
+    trip =Trip.objects.get(id=id) # trip is holding the id of the trip that you clicked.
     print trip.id
-    user = User.objects.get(id = request.session['userid'])
-    trip.join.add(user)
+    user = User.objects.get(id = request.session['userid']) # is holding the id of the current user.
+    trip.join.add(user) # using the forgein key to take the trip id and add your user id to it. 
     return redirect('/travels')
 
 

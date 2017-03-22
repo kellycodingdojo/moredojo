@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>This is the product info page</title>
+</head>
+<body>
+
+
+<h3>User who added this product to their favs list</h3>
+<h1>{{show_product.product_name}}</h1>
+
+	 {% for stuff in show_users %}
+        <p> {{stuff.name}}</p>
+      {% endfor %}
+	
+
+</body>
+</html>

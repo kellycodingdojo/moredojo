@@ -15,25 +15,32 @@
                 <td>...{{stuff.email}}</td>
                 <td>{{stuff.date}}</td> 
                 
-                <!-- <td><a href="products/show/{{stuff.id}}">Show</a></td>
-                <td><a href="products/edit/{{stuff.id}}">Edit</a></td>
-                <td><a href="products/destroy/{{stuff.id}}">delete</a></td> -->
+               
               </tr>
               {% endfor %}
               </table>
 <br>
 <br>
 <hr>
-<p>all paragraphs</p>
-{% for stuff in friend_list %}
+          <p>all friends</p>
+          <table>
+              <tr>
+               {% for stuff in friend_list %}
+                <th>friend id </th>
+                <th>friend name</th>
+                <th> user NAME</th>
+                 <th> user id</th>
+               <!---  Plan = description  -->
+              </tr>
+             
               <tr>
                 <td>{{stuff.id}}</td>
-                <td>{{stuff.friend_name}}</td>
+                <td>{{stuff.users.name}}</td>
+                <td>{{stuff.users.id}}</td>
+
                 
-                
-                <!-- <td><a href="products/show/{{stuff.id}}">Show</a></td>
-                <td><a href="products/edit/{{stuff.id}}">Edit</a></td>
-                <td><a href="products/destroy/{{stuff.id}}">delete</a></td> -->
-              </tr>
-              {% endfor %}
+                </tr> 
+                {% endfor %}
+            </table>
+            
 	

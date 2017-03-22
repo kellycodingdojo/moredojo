@@ -57,18 +57,6 @@ class UserManager(models.Manager):
             user = User.objects.create(email=postData['email'], name=postData['name'], alias=postData['alias'], date=postData['date'], password=hashed)
             return {'theuser':user.name, 'alias':user.alias, 'userid':user.id, 'date':user.date}
 
-
-class User(models.Model):
-    email = models.CharField(max_length=255,null=True)
-    name = models.CharField(max_length=45,null=True)
-    alias = models.CharField(max_length=45, null=True)
-    date = models.DateField(auto_now=False, auto_now_add=False, null=True)
-    password = models.CharField(max_length=45)
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
-    objects = UserManager()
-
-
 class QuoteManager(models.Manager):
 	def add_quote(self, postData, userid):
 		error_msgs = []
@@ -86,6 +74,17 @@ class QuoteManager(models.Manager):
 			quote_data = Quote.objects.create(author=postData['author'],quote=postData['quote'],user=user)
 			return {'userid':user, 'author':quote_data.author, 'quote':quote_data.quote}
 
+class User(models.Model):
+    email = models.CharField(max_length=255,null=True)
+    name = models.CharField(max_length=45,null=True)
+    alias = models.CharField(max_length=45, null=True)
+    date = models.DateField(auto_now=False, auto_now_add=False, null=True)
+    password = models.CharField(max_length=45)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+    objects = UserManager()
+
+
 class Quote(models.Model):
 	user = models.ForeignKey(User, related_name="auth")	
 	author = models.CharField(max_length=255)
@@ -96,6 +95,6 @@ class Quote(models.Model):
 
 class Fav(models.Model):
 	fav_quote = models.ForeignKey(Quote, related_name='fav', null=True)
-	fav_user = models.ForeignKey(User, related_name="fav_user")
+	fav_user = models.ForeignKey(User, related_name="fav_users")
 	created_at = models.DateTimeField(auto_now_add=True)
 	updated_at = models.DateTimeField(auto_now=True)

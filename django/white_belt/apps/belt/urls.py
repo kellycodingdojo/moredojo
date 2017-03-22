@@ -12,4 +12,5 @@ urlpatterns = [
     url(r'^logout$', views.logout),
     url(r'^home$', views.home),
     url(r'^add/(?P<id>\d+)$', views.add_friend),
+    url(r'^show_user/(?P<id>\d+)$', views.show_user),
     ]

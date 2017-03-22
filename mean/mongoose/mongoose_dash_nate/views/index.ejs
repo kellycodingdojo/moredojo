@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Cars</title>
+</head>
+<body>
+	<h1>Here are the cars</h1>
+	<% for(i in cars){%>
+		<p>Car:<%= cars[i].name %></p>
+		<p>Horsepower: <%= cars[i].horsepower %></p>
+		<a href="/car/<%= cars[i]._id %>">View</a>
+		<a href="/car/edit/<%= cars[i]._id %>">Edits</a>
+
+		<form action="/car/delete/<%= cars[i]._id %>" method="POST">
+			<button>Delete</button>
+		</form>
+	<% } %>
+	<a href="/car/new">Add New Car</a>
+
+</body>
+</html>

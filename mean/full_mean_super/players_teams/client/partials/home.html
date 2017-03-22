@@ -1,0 +1,22 @@
+<h2>Here are all the players</h2>
+<table>
+	<tr>
+		<th>Name:</th>
+		<th>Show</th>
+		<th>Update</th>
+		<th>Delete</th>
+	</tr>
+	<tr ng-repeat="player in players">
+		<td>{{player.player_name}} </td>
+		<td><a href="#!/show/{{player._id}}">Show</a></td>
+		<td><a href="#!/edit/{{player._id}}">Edit</a></td>
+		<td><button ng-click="deleteUser(player._id)">Delete</button></td>
+	</tr>
+	</table>
+	<table>
+<h2>Here are all the Teams</h2>	
+	<tr ng-repeat="team in teams">
+		<td>{{team.team_name}} </td>
+		<td><button ng-click="deleteTeam(team._id)">Delete</button></td>
+	</tr>
+</table>

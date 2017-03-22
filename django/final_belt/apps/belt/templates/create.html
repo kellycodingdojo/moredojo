@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>This is the page where we add products</title>
+</head>
+<body>
+<h1>Create a New Wish List Item</h1>
+	<form action="/add_product" method="post">
+      {% csrf_token %}
+      <p>Product: <input type="text" name="product_name" value=""></p>
+      <button type="submit" name="button">Add</button>
+    </form>
+    {% if messages %}
+      {% for message in messages %}
+        <p class="{{message.tags}}">{{message}}</p>
+      {% endfor %}
+    {% endif %}
+    
+</body>
+</html>

@@ -65,71 +65,18 @@ def friends(request):
     return render(request, 'friends.html', context)
 
 
-# def add_friend(request,id): 
-# 	user = User.objects.get(id=request.session['userid']) #user is grabbing the current users id. 
-# 	newfriend = Friend.objects.add_friend(friend_name= )
-# 	user.joins = newfriend
-# 	user.save()
-# 	return redirect('/friends')
 
-# def add_friend(request,id): 
-# 	user = User.objects.get(id=request.session['userid'])#user is grabbing the current users id. 
-# 	print user.id 
-# 	newfriend = User.objects.get(id =id ) # grab the id of who you want to add as friend.
-# 	print newfriend.id
-# 	print Friend
-# 	print Friend.objects
-# 	guy = Friend.objects
-# 	guy.joins.add(id=user,friend_name=newfriend.name)
-# 	return redirect('/friends')
 
 def add_friend(request,id): 
 	user = User.objects.get(id=request.session['userid'])#user is grabbing the current users id. 
 	print user.id 
 	newfriend = User.objects.get(id =id ) # grab the id of who you want to add as friend.
 	print newfriend.id 
-	Friend.objects.create(users=user, friends=newfriend)
+	Friend.objects.create(users=user, friends=newfriend) #add both to a row in the friends table. 
 	return redirect('/friends')
 
-# def add_friend(request,id): 
-# 	user = User.objects.get(id=request.session['userid']) #user is grabbing the current users id. 
-# 	newfriend = User.objects.get(id =id ) # grab the id of who you want to add as friend. 
-# 	friends = Friend.objects.add(id=user, friend_name=newfriend.name)
-# 	return redirect('/friends')
-	
-# #ype object 'User' has no attribute 'joins'
-# #'Manager' object has no attribute 'add'
+def show_user(request,id):
+    display_friends = User.objects.get(id=id)
+    context = {'display_friends': display_friends,}
+    return render(request, 'user.html', context)
 
-# def joins(request,id): 
-#     trip =Trip.objects.get(id=id)
-#     print trip.id
-#     user = User.objects.get(id = request.session['userid'])
-#     trip.join.add(user)
-#     return redirect('/travels')
-
-# def add_friend(request,id):
-# 	user = User.objects.get(id = request.session['userid'])
-# 	friends = Friend(user=request.user, friend= user)
-# 	return redirect('/friends')
-
-# def add_friend(request,id):
-# 	user = User.objects.get(id = request.session['userid'])
-# 	friend_manage = add_friend(friend_name=user.name)
-# 	friend_manage.save()
-# 	return redirect('/friends')
-
-# def add_friend(request,id):
-# 	print id
-# 	user = User.objects.get(id = request.session['userid'])
-# 	Friend.users.add_friend(user)
-# 	return redirect('/friends')
-
-# def add(request):
-#         user = {'user': User.objects.get(id = request.session['userid'])}
-#         book = {'book': Books.objects.get(id=postData['id'])}
-#         Reviews.objects.create(review=postData['review'], rating=postData['rating'], book=book['book'], user=user['user'])
-#         return
-
-# def add(request):
-#     context = {'freinds':Friends.objects.all()}
-#     return render(request, 'beltrev/add.html', context)

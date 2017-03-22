@@ -17,15 +17,13 @@
               </tr>
               {% for stuff in friend_list %}
               <tr>
-                <td>{{stuff.alias}}</td>
-                <td><a href="/view/{{friend_list.id}}">Veiw Profile</a>
-                  <a href="/remove/{{friend_list.id}}">Remove Friend</a>
+                <td>{{stuff.users.alias}}</td>
+                <td><a href="/show_user/{{stuff.users.id}}">Veiw Profile</a>
+                  <a href="/remove/{{stuff.id}}">Remove Friend</a>
                 </td>
                 <td>{{stuff.id}}</td>
                
-                <td><a href="products/show/{{stuff.id}}">Show</a></td>
-                <td><a href="products/edit/{{stuff.id}}">Edit</a></td>
-                <td><a href="products/destroy/{{stuff.id}}">delete</a></td>
+           
               </tr>
               {% endfor %}
               </table>
@@ -51,9 +49,7 @@
               	<td><a href="/add/{{stuff.id}}">Add Friend</a></td>
                 <td>{{stuff.id}}</td>
                
-                <!-- <td><a href="products/show/{{stuff.id}}">Show</a></td>
-                <td><a href="products/edit/{{stuff.id}}">Edit</a></td>
-                <td><a href="products/destroy/{{stuff.id}}">delete</a></td> -->
+            
               </tr>
               {% endfor %}
               </table>

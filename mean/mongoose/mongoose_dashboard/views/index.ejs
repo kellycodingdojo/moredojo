@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Xmen</title>
+</head>
+<body>
+	<h1>Here are the Xmen</h1>
+	<% for(i in heros){%>
+		<p>Name:<%= heros[i].name %></p>
+		<p>Power: <%= heros[i].power %></p>
+		<p>Age: <%= heros[i].age %></p>
+		<a href="/hero/<%= heros[i]._id %>">View</a>
+		<a href="/hero/edit/<%= heros[i]._id %>">Edits</a>
+
+		<form action="/hero/delete/<%= heros[i]._id %>" method="POST">
+			<button>Delete</button>
+		</form>
+	<% } %>
+	<a href="/hero/new">Add New Hero!</a>
+
+</body>
+</html>

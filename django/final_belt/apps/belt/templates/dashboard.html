@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>The landing page </title>
+</head>
+<body>
+ <a href="/logout">Logout: </a>
+<h1>Hello, {{request.session.username}}</h1>
+<h1>Hello, {{request.session.theuser}}</h1>
+
+	<div>
+		<h3>Your Wish List</h3>
+	</div>
+
+		   <table>
+              <tr>
+                <th>Item..</th>
+                <th>Added By</th>
+                <th>Date Added</th> 
+                <th>Action..</th> <!---  Plan = description  -->
+                <th>User Id</th>
+                <th>Product Id</th>
+              </tr>
+              {% for stuff in wish_list %}
+              
+              <tr>
+              <th><a href="/show_product/{{stuff.wish_products.id}}">{{stuff.wish_products.product_name}}</a></th>
+              <th>{{stuff.wish_products.users.username}}</th>
+              <th>{{stuff.created_at}}</th>
+              <td><a href="/remove/{{stuff.id}}">Remove from my wishlist</a> <a href="/delete/{{stuff.wish_products.id}}">Delete</a></td>
+              <th>{{stuff.wish_users.id}}</th>
+              <th>{{stuff.wish_products.id}}</th>
+              </tr>
+              {% endfor %}
+              <tr>
+              
+              {% for things in products %}
+              <td><a href="/dashboard/{{stuff.id}}">Add To My Wishlist</td>{{things.product_name}}</a></th>
+              <th> {{things.users.username}}</th>
+              <th> {{things.created_at}}</th>
+              <th> {{things.id}}</th>
+              
+              </tr>
+              {% endfor %}
+       </table>
+
+
+<br>
+       <br>
+    
+
+
+       <div>
+		<h3>Others Wish list</h3>
+	</div>
+		<table>
+              <tr>
+                <th>Item..</th>
+                <th>Item Id..</th>
+                <th>Added by..</th> 
+                <th>DATE..</th>
+                <th>Action..</th> <!---  Plan = description  -->
+              </tr>
+              {% for stuff in others_wish_list %}
+              <tr>
+              <th>{{stuff.wish_products.product_name}}</th>
+              <th>{{stuff.id}}</th>
+              <th>{{stuff.wish_products.users.username}}</th>
+              <th>{{stuff.created_at}}</th>
+              <td><a href="/dashboard/{{stuff.id}}">Add To My Wishlist</a></td>
+              </tr>
+              {% endfor %}
+       </table>
+       
+       
+<br>
+<br>
+
+ <!-- <table>
+              <tr>
+                
+                <th>Added By....</th>
+                <th>name..</th>
+                <th>Date Added...</th> 
+                
+                <th>User Id</th>
+             
+              </tr>
+              {% for stuff in products %}
+              <tr>
+             {{stuff.product_name}}</a></th>
+              <th>{{stuff.users.username}}</th>
+              <th>{{stuff.created_at}}</th>
+              <th>{{stuff.id}}</th>
+         
+              </tr>
+              {% endfor %}
+       </table> -->
+
+
+
+       <p><a href="/wish_items/create"> Add Item</a></p>
+
+</body>
+</html>

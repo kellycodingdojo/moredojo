@@ -51,15 +51,13 @@ def login(request):
 
 
 def quotes(request):
-	alluser = User.objects.all()
-	all_favs = Fav.objects.all()#.exclude(fav_quote__id = request.session['userid'])#.filter(fav_user__id = request.session['userid'])
-	others_list = Quote.objects.all().exclude(user__id = request.session['userid']) #.exclude(join__id = request.session['userid'])
-	context = {
-		'quote_list':others_list,
-		'fav_list':all_favs,
-		'alluser':alluser
-	}
-	return render(request, 'quotes.html', context)
+    quote_list = Quote.objects.exclude(user__id = request.session['userid']).exclude(fav__fav_user__id=request.session['userid']) # this is broken it does not exclude your favs. 
+    fav_list = Fav.objects.filter(fav_user__id=request.session['userid'])# this may be fixed, this is broken it displays all favs. 
+    context = {
+    'quote_list':quote_list,
+    'fav_list':fav_list,
+    }
+    return render(request, 'quotes.html', context)
 
 def add_quote(request):
 	if request.method == "POST":
@@ -70,6 +68,7 @@ def add_quote(request):
 			return redirect('/quotes')
 		else:
 			return redirect('/quotes')
+
 
 
 def user_gen(request,id):
@@ -88,21 +87,6 @@ def add_fav(request,id):
 	Fav.objects.create(fav_user=user, fav_quote=favquote)
 	return redirect('/quotes')
 
-
-# def add_friend(request,id): 
-# 	user = User.objects.get(id=request.session['userid'])#user is grabbing the current users id. 
-# 	print user.id 
-# 	newfriend = User.objects.get(id =id ) # grab the id of who you want to add as friend.
-# 	print newfriend.id 
-# 	Friend.objects.create(users=user, friends=newfriend)
-# 	return redirect('/friends')
-
-
- # trip =Trip.objects.get(id=id) # trip is holding the id of the trip that you clicked.
- #    print trip.id
- #    user = User.objects.get(id = request.session['userid']) # is holding the id of the current user.
- #    trip.join.add(user) # using the forgein key to take the trip id and add your user id to it. 
- #    return redirect('/travels')
 
 def delete(request, id):
     Fav.objects.get(id=id).delete()

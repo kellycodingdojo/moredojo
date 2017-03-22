@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='app'>
+
+<head>
+    <meta charset="UTF-8">
+    <script src="bower_components/angular/angular.js" charset="utf-8"></script>
+    <title>Document</title>
+    <style>
+        div {
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        table {
+            margin-top: 30px;
+            width: 100%;
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+        td,
+        th {
+            border: 1px solid #CCC;
+        }
+        input {
+            display: block;
+        }
+    </style>
+    <script>
+        var app = angular.module('app', []);
+        app.factory('usersFactory', [function() {
+            var factory = {};
+            var users = [];
+            factory.create = function(data, callback) {
+                users.push(data);
+                callback();
+            }
+            factory.index = function(callback) {
+                callback(users);
+            }
+            factory.delete = function(id, callback) {
+                users.splice(id, 1);
+                callback();
+            }
+            return factory;
+        }]);
+        app.controller('usersController', ['usersFactory', UsersController]);
+        // note the separation of the UsersController function: basically when this app.controller method runs: a new UsersController(usersFactory) instance is created!
+        // The methods could be moved into prototype (see assignment 1 answer sheet, here we left them in the function so that we can console.log this and see all of the properties and methods directly in the object that is created when the controller method is run)
+        // in the callback to the factory, this will point to the factory, so we have created a local variable _this that will remain pointed to the original controller (see the index callback and notice the _this in each).
+
+        function UsersController(usersFactory) {
+            var _this = this;
+            this.order = 'firstName';
+            this.users = [];
+            this.user = {};
+            this.index = function() {
+                usersFactory.index(function(data) {
+                    console.log(data);
+                    _this.users = data;
+                    _this.user = {};
+                });
+            }
+            this.create = function() {
+                usersFactory.create(this.user, this.index);
+            }
+            this.delete = function(id) {
+                usersFactory.delete(id, this.index);
+            }
+        }
+    </script>
+</head>
+<body>
+    <div ng-controller="usersController as UC">
+        <fieldset>
+            <legend>UsersController</legend>
+            <form ng-submit="UC.create();">
+                <input type="text" ng-model="UC.user.firstName" placeholder="First Name">
+                <input type="text" ng-model="UC.user.lastName" placeholder="Last Name">
+                <input type="text" ng-model="UC.user.favoriteLanguage" placeholder="Favorite Language">
+                <input type="date" ng-model="UC.user.createdAt" placeholder="Date Created">
+                <input type="submit" value="add user">
+            </form>
+        </fieldset>
+        <table>
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Favorite Language</th>
+                    <th>Created On</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tr>
+                <td>
+                    <button ng-click="UC.order = 'firstName'">order</button>
+                </td>
+                <td>
+                    <button ng-click="UC.order = 'lastName'"> order</button>
+                </td>
+                <td>
+                    <button ng-click="UC.order = 'favoriteLanguage'"> order</button>
+                </td>
+                <td>
+                    <button ng-click="UC.order = 'createdAt'">order</button>
+                </td>
+                <td> </td>
+            </tr>
+            <!-- NOTE THE ORDER BY! -->
+            <tbody ng-repeat="user in UC.users | orderBy:UC.order track by $index">
+                <tr>
+                    <td>{{user.firstName}}</td>
+                    <td>{{user.lastName}}</td>
+                    <td>{{user.favoriteLanguage}}</td>
+                    <td ng-bind="user.createdAt | date:'mediumDate'"></td>
+                    <td>
+                        <button ng-click="UC.delete($index)">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>
