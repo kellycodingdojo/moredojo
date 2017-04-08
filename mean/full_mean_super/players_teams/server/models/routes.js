@@ -16,3 +16,15 @@ var TeamSchema = new mongoose.Schema({
 }, {timestamps:true})
 
 mongoose.model('Team', TeamSchema)
+
+/// the below table is not hooked up. 
+var AssociationSchema = new mongoose.Schema({
+	_player:{type: Schema.Types.ObjectId, ref:'Player'},
+	_team: {type: Schema.Types.ObjectId, ref:'Team'},
+}, {timestamps:true})
+
+mongoose.model('Association', AssociationSchema)
+
+
+// if you wanted to do the team player associations then you would build a new schema 
+// that would hold the player team relationships. 

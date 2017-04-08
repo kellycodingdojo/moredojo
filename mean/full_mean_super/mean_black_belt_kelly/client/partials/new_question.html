@@ -1,0 +1,15 @@
+<a href="/logout">Logout</a><br><br>
+<a href="/home">Home</a><br><br>
+
+
+<h1> New Question</h1>
+
+<div>
+<form name="addQuestion">
+  <p>Question: <textarea type="textarea" name='question' ng-model='question.question' ng-minlength="10"  required></textarea></p>	
+  <p> Description(optional) <textarea type="textarea" name='description' ng-model='question.description' ></textarea></p>
+  <button ng-disabled="addQuestion.$invalid" ng-click='createQuestion(question)'>submit</button>
+</form>
+
+
+</div>

@@ -1,0 +1,30 @@
+<p>Hello, {{user.name}}</p><a href="/logout">Logout</a>
+<p>Search: <input ng-model="searchText"></p>
+<table>
+  <tr>
+    <th>Category</th>
+    <th>Topic</th>
+    <th>User Name</th>
+    <th>Posts</th>
+  </tr>
+  <tr ng-repeat='topic in topics | filter:searchText | orderBy:"-createdAt"'>
+    <td>{{topic.category}}</td>
+    <td><a href="#!/topic/{{topic._id}}">{{topic.topic}}</a></td>
+    <td><a href="#!/user/{{topic._user._id}}">{{topic._user.name}}</a></td>
+    <td>{{topic.posts.length}}</td>
+  </tr>
+</table>
+
+<p>Add a new Topic</p>
+<form>
+  <p>Topic: <input type="text" ng-model="newTopic.topic"></p>
+  <p>Description: <textarea ng-model="newTopic.description" rows="8" cols="80"></textarea></p>
+  <p>Category: <select ng-model="newTopic.category">
+    <option value="HTML">HTML</option>
+    <option value="Ruby on Rails">Ruby on Rails</option>
+    <option value="UX">UX</option>
+    <option value="Web Development">Web Development</option>
+    <option value="MEAN">MEAN</option>
+  </select></p>
+  <button ng-click='createTopic(newTopic)'>Submit</button>
+</form>

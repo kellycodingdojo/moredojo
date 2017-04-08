@@ -21,5 +21,9 @@ app.config(function($routeProvider){
 			templateUrl: 'partials/new_team.html',
 			controller: 'TeamController'
 		})
+		.when('/association', {
+			templateUrl: 'partials/association.html',
+			controller: 'AssociationController'
+		})
 
 })

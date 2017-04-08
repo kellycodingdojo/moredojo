@@ -1,0 +1,15 @@
+<a href="#!/dash">Home</a>
+<a href="/logout">Logout</a>
+
+<h1>New Question</h1>
+<form name='questionForm'>
+  <p>Question: <textarea name='question' ng-model='newQuestion.question' rows="8" cols="80" ng-minlength='10' required></textarea></p>
+  <p>Description: <textarea ng-model='newQuestion.description' rows="8" cols="80"></textarea></p>
+  <button ng-click='cancelQuestion()'>Cancel</button>
+  <button ng-disabled='questionForm.$invalid' ng-click='submitQuestion(newQuestion)'>Submit</button>
+</form>
+
+<div ng-messages='questionForm.question.$error'>
+  <p ng-message='required'>Question is required!</p>
+  <p ng-message='minlength'>Question must be at least 10 characters!</p>
+</div>

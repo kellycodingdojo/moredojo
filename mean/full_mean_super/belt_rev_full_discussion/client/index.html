@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+	<title>Full Discussion Board</title>
+	<script type="text/javascript" src="jquery/dist/jquery.js"></script>
+
+	<script type="text/javascript" src="angular/angular.js"></script>
+	<script type="text/javascript" src="angular-route/angular-route.js"></script>
+	<script type="text/javascript" src="angular-messages/angular-messages.js"></script>
+
+	<script type="text/javascript" src="my_angular/partial_route.js"></script>
+
+	<script type="text/javascript" src="my_angular/controller/loginController.js"></script>
+	<script type="text/javascript" src="my_angular/controller/dashController.js"></script>
+	<script type="text/javascript" src="my_angular/controller/topicController.js"></script>
+
+	<script type="text/javascript" src="my_angular/factory/dashFactory.js"></script>
+	<script type="text/javascript" src="my_angular/factory/topicFactory.js"></script>
+
+	<link href="bootstrap/dist/css/bootstrap.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+	<div class="container-fluid">
+		<h1>Welcome to the FULL MEAN Discussion Board</h1>
+		<div ng-view></div>
+	</div>
+</body>
+</html>

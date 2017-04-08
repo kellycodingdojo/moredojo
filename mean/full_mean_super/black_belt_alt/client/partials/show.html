@@ -1,0 +1,11 @@
+<h1>{{question.question}}</h1>
+<h3>{{question.description}}</h3>
+<a href="#!/dash">Home</a>|
+<a href="#!/question/{{question._id}}/new_answer">Answer this question</a>|
+<a href="/logout">Logout</a>
+<fieldset ng-repeat='answer in question.answers | orderBy:"-likes"'>
+  <p>{{answer.user}}:</p>
+  <p>{{answer.answer}}</p>
+  <p>{{answer.detail}}</p>
+  <p>Likes: {{answer.likes}} <button ng-click='likeAnswer(answer._id, question._id)'>Like</button></p>
+</fieldset>

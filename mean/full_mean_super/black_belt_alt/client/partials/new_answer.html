@@ -1,0 +1,16 @@
+<h1>{{question.question}}</h1>
+<h3>{{question.description}}</h3>
+<a href="#!/dash">Home</a>|
+<a href="#!/question/{{question._id}}">Go to Question</a>|
+<a href="/logout">Logout</a>
+<form name='answerForm'>
+  <p>Your Answer: <textarea name='answer' ng-model='newAnswer.answer' rows="8" cols="80" ng-minlength='5' required></textarea></p>
+  <p>Supporting Details: <textarea ng-model='newAnswer.detail' rows="8" cols="80"></textarea></p>
+  <button ng-click='cancelAnswer()'>Cancel</button>
+  <button ng-disabled="answerForm.$invalid" ng-click='submitAnswer(question._id, newAnswer)'>Submit</button>
+</form>
+
+<div ng-messages='answerForm.answer.$error'>
+  <p ng-message='required'>Answer is required!</p>
+  <p ng-message='minlength'>Answer must be at least 5 characters!</p>
+</div>

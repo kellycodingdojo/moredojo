@@ -1,0 +1,28 @@
+<h2>Associations</h2>
+
+<form>
+	<select ng-model = 'newA.player'>
+	<option ng-repeat='player in players' value="{{player.player_name}}">{{player.player_name}}
+	</option>
+	</select>
+	<select ng-model="newA.team">
+	<option ng-repeat="team in teams" value="{{team.team_name}}">{{team.team_name}}
+	</option>
+	</select>
+	 	<button ng-click='addAssociation()'>add Team
+	</button>
+</form>
+
+<table>
+	<tr>
+		<th>Player</th>
+		<th>Team</th>
+		<th>Action</th>
+	</tr>
+	<tr ng-repeat='i in associations'>
+	<td>{{i.player}}</td>
+	<td>{{i.team}}</td>
+	<td>Delete</td>
+	</tr>
+
+</table>

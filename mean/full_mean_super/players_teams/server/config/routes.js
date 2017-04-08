@@ -10,4 +10,6 @@ module.exports = function(app){
 	app.get('/teams', players.team_index);
 	app.post('/teams', players.team_create);
 	app.delete('/teams/:id', players.team_delete);
+	app.post('/association', players.association_index);
+	app.get('/association', players.get_associations);
 }

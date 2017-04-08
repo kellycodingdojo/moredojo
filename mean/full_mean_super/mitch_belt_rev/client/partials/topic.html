@@ -1,0 +1,20 @@
+<a href="#!/dash">Dashboard</a> <a href="/logout">Logout</a>
+<h3><a href="#!/user/{{topic._user._id}}">{{topic._user.name}}</a> posted a topic: {{topic.topic}}</h3>
+<p>{{topic.description}}</p>
+<h3>Post your answer here</h3>
+<form>
+  <textarea ng-model="newPost.post" rows="8" cols="80"></textarea>
+  <button ng-click="createPost(topic._id, newPost)">Post</button>
+</form>
+<fieldset ng-repeat='post in topic.posts | orderBy:"-createdAt"'>
+  <a href="#!/user/{{post._user._id}}">{{post._user.name}}</a> says: {{post.post}}
+  <button ng-click='upvote(post._id, topic._id)'>Upvote</button>{{post.upvotes}}
+  <button ng-click='downvote(post._id, topic._id)'>Downvote</button>{{post.downvotes}}
+  <fieldset ng-repeat='comment in post.comments| orderBy:"-createdAt"'>
+    <a href="#!/user/{{comment._user._id}}">{{comment._user.name}}</a> says: {{comment.comment}}
+  </fieldset>
+  <form>
+    <input type="text" ng-model="newComment.comment">
+    <button ng-click='createComment(topic._id, post._id, newComment)'>Comment</button>
+  </form>
+</fieldset>

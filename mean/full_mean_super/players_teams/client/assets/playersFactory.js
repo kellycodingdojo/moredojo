@@ -81,6 +81,28 @@ app.factory('PlayersFactory', ['$location', '$http', function($location, $http){
 		})
 	}
 
+	factory.getAssociations= function(callback){
+		$http({
+			url:'/association',
+			method: 'GET'
+		}).then(function(res){
+			callback(res.data);
+		})
+	}
+
+	factory.addAssociation= function(player){
+		console.log(player)
+		$http({
+			url:'/association', 
+			method:"POST", 
+			data: player
+		}).then(function(res){
+			$location.url('/association')
+		}, function(res){
+			console.log(res);
+		})
+	}
+
 
 
 	return factory;

@@ -1,0 +1,17 @@
+<p>Hello, {{user.name}}</p><a href="/logout">Logout</a><br><br>
+<td><a href="#!/new_question">Add Question</a></td>
+<p>Search: <input ng-model="searchText"></p>
+<table>
+  <tr>
+    <th style="border: 1px solid green; padding: 5px; margin: 20px; width: 150px;">Question</th>
+    <th style="border: 1px solid green; padding: 5px; margin: 20px; width: 150px;">Answers</th>
+    <th style="border: 1px solid green; padding: 5px; margin: 20px; width: 150px;">Action</th>
+  </tr>
+  <!-- <tr ng-repeat='topic in topics | filter:searchText | orderBy:"-createdAt"'>
+    <td>{{topic.category}}</td>
+    <td><a href="#!/topic/{{topic._id}}">{{topic.topic}}</a></td>
+    <td><a href="#!/user/{{topic._user._id}}">{{topic._user.name}}</a></td>
+    <td>{{topic.posts.length}}</td>
+  </tr> -->
+</table>
+

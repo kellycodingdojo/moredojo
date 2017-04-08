@@ -1,0 +1,10 @@
+
+<div ng-repeat="topic in topics | orderBy: '-createdAt' ">	
+		<table>
+			<tr>
+				<th>{{topic.category}}</th>
+				<th>{{topic.topic}}</th>
+				<th>{{topic._user.name}}</th>
+			</tr>
+		</table>
+	</div>

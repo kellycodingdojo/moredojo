@@ -2,5 +2,6 @@ app.controller('NewController', ['$scope', '$routeParams', 'PlayersFactory', fun
 	$scope.addPlayer = function(player){
 		console.log(player)
 		PlayersFactory.newPlayer(player);
+		$scope.newPlayer = {}
 	}
 }])

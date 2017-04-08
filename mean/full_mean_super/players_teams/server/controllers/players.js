@@ -24,6 +24,28 @@ module.exports = {
       })
     },
 
+  association_index: function(req,res){
+      Player.find({}, function(err, data){
+        if(err){
+          res.status(400).send("Something went wrong.")
+        }
+        else{
+          res.json(data);
+        }
+      })
+    },
+
+ get_associations: function(req,res){
+      Player.find({}, function(err, data){
+        if(err){
+          res.status(400).send("Something went wrong.")
+        }
+        else{
+          res.json(data);
+        }
+      })
+    },
+
 
 
   team_create: function(req,res){

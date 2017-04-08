@@ -1,0 +1,22 @@
+{
+  "name": "belt_rev",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Mitch <mitchellw.andrews@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/mitchellwandrews/MEAN",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.6.3",
+    "angular-route": "^1.6.3",
+    "angular-messages": "^1.6.3"
+  }
+}
