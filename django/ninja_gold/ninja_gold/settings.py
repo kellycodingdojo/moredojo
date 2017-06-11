@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # mine
     'apps.ninja_gold_project',
-    'django_extensions',
+    
 ]
 
 MIDDLEWARE = [
